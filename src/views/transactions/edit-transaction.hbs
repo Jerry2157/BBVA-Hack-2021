@@ -1,0 +1,108 @@
+{{#each errors}}
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+  {{text}}
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+{{/each}}
+
+<div class="col-md-4 mx-auto">
+  <div class="card">
+    <div class="card-header">
+      <h3>Edit Note</h3>
+    </div>
+    <div class="card-body">
+      <form action="/notes/edit-note/{{note._id}}?_method=PUT" method="POST">
+        <input type="hidden" name="_method" value="PUT">
+        <div class="form-group">
+          <input type="text" name="title" class="form-control" value="{{note.title}}"/>
+        </div>
+        <div class="form-group">
+          <textarea name="description" class="form-control">{{note.description}}</textarea>
+        </div>
+        <div class="form-group">
+          <button class="btn btn-primary btn-block" type="submit">
+            Save
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-4 mx-auto">
+  <div class="card text-center">
+    <div class="card-header">
+      <h3>Nueva transacción</h3>
+    </div>
+    <div class="card-body">
+      <form action="/transactions/new-transaction" method="POST">
+        <!-- Titulo input -->
+        <div class="form-outline mb-4">
+          <input type="text" id="form4Example1" class="form-control" data-mdb-showcounter="true" maxlength="20"
+            name="title" />
+          <div class="form-helper"></div>
+          <label class="form-label" for="form4Example1">Título</label>
+        </div>
+
+        <!-- Descripcion input -->
+        <div class="form-outline mb-5">
+          <input type="text" id="form4Example2" class="form-control" data-mdb-showcounter="true" maxlength="60"
+            name="description" />
+          <div class="form-helper"></div>
+          <label class="form-label" for="form4Example2">Descripción</label>
+        </div>
+
+        <!-- Categoría input -->
+        <div class="mb-4">
+          <select class="select" data-mdb-filter="true">
+            <option value="Gastos en general" data-mdb-icon="https://mdbootstrap.com/img/Photos/Avatars/avatar-1.jpg">
+              Gastos en general</option>
+            <option value="Suscripciones" data-mdb-icon="https://mdbootstrap.com/img/Photos/Avatars/avatar-2.jpg">
+              Suscripciones</option>
+            <option value="Alimentación" data-mdb-icon="https://mdbootstrap.com/img/Photos/Avatars/avatar-3.jpg">
+              Alimentación</option>
+            <option value="Educación" data-mdb-icon="https://mdbootstrap.com/img/Photos/Avatars/avatar-4.jpg">Educación
+            </option>
+            <option value="Vivienda" data-mdb-icon="https://mdbootstrap.com/img/Photos/Avatars/avatar-5.jpg">Vivienda
+            </option>
+          </select>
+          <label class="form-label select-label">Categoría</label>
+        </div>
+
+        <!-- Money input -->
+        <div class="form-outline">
+          <input type="number" id="typeNumber" class="form-control" aria-describedby="textExample1" />
+          <label class="form-label" for="typeNumber">Dinero</label>
+        </div>
+        <div id="textExample1" class="">
+          Indicar con signo '-' en caso de ser gasto, incluir decimales con punto '.'
+        </div>
+        <br>
+
+        <!-- Fecha input -->
+        <div class="form-outline datepicker-translated mb-4" data-mdb-format="dd, mmm, yyyy">
+          <input type="text" class="form-control" id="exampleDatepicker3" placeholder="dd, mmm, yyyy" />
+          <label for="exampleDatepicker3" class="form-label">Seleccionar una fecha</label>
+        </div>
+
+        <!-- Hora input-->
+        <div class="form-outline timepicker-default-time-with-new-date-24h mb-4">
+  <input type="text" class="form-control" id="form212" />
+  <label class="form-label" for="form212">Ingresar hora de transacción</label>
+</div>
+
+
+        <!-- Message input -->
+        <div class="form-outline mb-4">
+          <textarea class="form-control" id="form4Example3" rows="2"></textarea>
+          <label class="form-label" for="form4Example3">Notas extras opcionales</label>
+        </div>
+
+        <!-- Submit button -->
+        <button type="submit" class="btn btn-primary btn-block mb-4">Enviar transaccion</button>
+      </form>
+    </div>
+  </div>
+</div>

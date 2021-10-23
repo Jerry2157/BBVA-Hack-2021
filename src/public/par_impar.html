@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Material Design for Bootstrap</title>
+    <!-- MDB icon -->
+    <link rel="icon" href="img/mdb-favicon.ico" type="image/x-icon" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" />
+    <script src="https://kit.fontawesome.com/9d51fa0780.js" crossorigin="anonymous"></script>
+    <!-- Google Fonts Roboto -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- MDB ESSENTIAL -->
+    <!--<link rel="stylesheet" href="css/mdb.min.css" />-->
+    <link rel="stylesheet" href="css/mdb.dark.min.css" />
+    <!-- MDB PLUGINS -->
+    <link rel="stylesheet" href="plugins/css/all.min.css" />
+    <!-- Custom global styles -->
+    <link rel="stylesheet" href="css/custom.css" />
+    <!-- Custom styles -->
+    <style></style>
+
+    <!-- Bouncing walls-->
+    <script>
+        // shim layer with setTimeout fallback
+        window.requestAnimFrame = (function() {
+            return window.requestAnimationFrame ||
+                window.webkitRequestAnimationFrame ||
+                window.mozRequestAnimationFrame ||
+                window.oRequestAnimationFrame ||
+                window.msRequestAnimationFrame ||
+                function(callback) {
+                    window.setTimeout(callback, 1000 / 60);
+                };
+        })();
+    </script>
+</head>
+
+<body>
+    <!-- Start your project here-->
+
+    <!--Main Navigation-->
+    <header>
+        <!-- Sidenav -->
+        <div id="sidenav-1" class="sidenav" data-mdb-hidden="true" data-mdb-accordion="true">
+            <a class="ripple d-flex justify-content-center py-4" href="#!" data-mdb-ripple-color="primary">
+                <img id="MDB-logo" src="https://jerry2157.com/wp-content/uploads/2021/10/cupfiesta_logo_temp.png" alt="MDB Logo" draggable="false" style="max-width: 80%;" />
+            </a>
+
+            <ul class="sidenav-menu">
+                <li class="sidenav-item">
+                    <a class="sidenav-link" href="">
+                        <i class="fas fa-chart-area fa-fw me-3"></i><span>Webiste traffic</span></a>
+                </li>
+                <li class="sidenav-item">
+                    <a class="sidenav-link"><i class="fas fa-cogs fa-fw me-3"></i><span>Settings</span></a>
+                    <ul class="sidenav-collapse">
+                        <li class="sidenav-item">
+                            <a class="sidenav-link">Profile</a>
+                        </li>
+                        <li class="sidenav-item">
+                            <a class="sidenav-link">Account</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="sidenav-item">
+                    <a class="sidenav-link"><i class="fas fa-lock fa-fw me-3"></i><span>Password</span></a>
+                    <ul class="sidenav-collapse">
+                        <li class="sidenav-item">
+                            <a class="sidenav-link">Request password</a>
+                        </li>
+                        <li class="sidenav-item">
+                            <a class="sidenav-link">Reset password</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="sidenav-item">
+                    <a class="sidenav-link" href="">
+                        <i class="fas fa-chart-line fa-fw me-3"></i><span>Analytics</span></a>
+                </li>
+                <li class="sidenav-item">
+                    <a class="sidenav-link" href="">
+                        <i class="fas fa-chart-pie fa-fw me-3"></i><span>SEO</span></a>
+                </li>
+                <li class="sidenav-item">
+                    <a class="sidenav-link" href="">
+                        <i class="fas fa-chart-bar fa-fw me-3"></i><span>Orders</span></a>
+                </li>
+                <li class="sidenav-item">
+                    <a class="sidenav-link" href="">
+                        <i class="fas fa-globe fa-fw me-3"></i><span>International</span></a>
+                </li>
+                <li class="sidenav-item">
+                    <a class="sidenav-link" href="">
+                        <i class="fas fa-building fa-fw me-3"></i><span>Partners</span></a>
+                </li>
+                <li class="sidenav-item">
+                    <a class="sidenav-link" href="">
+                        <i class="fas fa-calendar fa-fw me-3"></i><span>Calendar</span></a>
+                </li>
+                <li class="sidenav-item">
+                    <a class="sidenav-link" href="">
+                        <i class="fas fa-users fa-fw me-3"></i><span>Users</span></a>
+                </li>
+                <li class="sidenav-item">
+                    <a class="sidenav-link" href="">
+                        <i class="fas fa-money-bill fa-fw me-3"></i><span>Sales</span></a>
+                </li>
+            </ul>
+        </div>
+        <!-- Sidenav -->
+
+        <!-- Navbar -->
+        <nav id="main-navbar" class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+            <!-- Container wrapper -->
+            <div class="container-fluid">
+                <!-- Toggler -->
+                <button data-mdb-toggle="sidenav" data-mdb-target="#sidenav-1" class="btn shadow-0 p-0 me-4" aria-controls="#sidenav-1" aria-haspopup="true">
+                  <i class="fas fa-bars fa-lg"></i>
+                </button>
+
+                <a class="navbar-brand d-none d-md-flex" href="#!" data-toggle="sidenav" data-target="#sidenav-1">
+                    <img src="https://jerry2157.com/wp-content/uploads/2021/10/cupfiesta_logo_temp.png" height="40" alt="" loading="lazy" />
+                </a>
+
+                <!-- Search form -->
+                <form class="d-none d-md-flex input-group w-auto my-auto">
+                    <input autocomplete="off" type="search" class="form-control rounded" placeholder='Buscar juegos y bebidas' style="min-width: 225px" />
+                    <span class="input-group-text border-0"><i class="fas fa-search"></i></span>
+                </form>
+
+                <!-- Right links -->
+                <ul class="navbar-nav ms-auto d-flex flex-row">
+                    <!-- Icon -->
+                    <li class="nav-item">
+                        <a class="nav-link me-3 me-lg-0" href="#">
+                            <i class="fas fa-fill-drip"></i>
+                        </a>
+                    </li>
+                    <!-- Icon -->
+                    <li class="nav-item me-3 me-lg-0">
+                        <a class="nav-link" href="#">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </li>
+
+                    <!-- Icon dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link me-3 me-lg-0 dropdown-toggle hidden-arrow" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+                            <i class="united kingdom flag m-0"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            <li>
+                                <a class="dropdown-item" href="#"><i class="united kingdom flag"></i>English
+                  <i class="fa fa-check text-success ms-2"></i></a>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider" />
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#"><i class="poland flag"></i>Polski</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#"><i class="china flag"></i>中文</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#"><i class="japan flag"></i>日本語</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#"><i class="germany flag"></i>Deutsch</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#"><i class="france flag"></i>Français</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#"><i class="spain flag"></i>Español</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#"><i class="russia flag"></i>Русский</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#"><i class="portugal flag"></i>Português</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <!-- Avatar -->
+                    <button class="btn btn-sm btn-outline-primary mx-2" type="button" data-ripple-color="dark">
+            Sign up
+            <i class="fas fa-lock ms-1"></i>
+          </button>
+                </ul>
+            </div>
+            <!-- Container wrapper -->
+        </nav>
+        <!-- Navbar -->
+    </header>
+
+    <!--Main Navigation-->
+    <main style="min-height: 100vh;">
+        <!-- START BANNERS -->
+        <div class="container pt-5 d-none d-md-block my-5 py-4">
+            <!-- Desktop -->
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card shadow-0 border rounded-5">
+                        <div class="card-body text-center">
+                            <p class="text-muted mb-1">Primer paso</p>
+                            <h6 class="mb-0">Escoje con cuantas canicas quieres jugar</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card shadow-0 border rounded-5">
+                        <div class="card-body text-center">
+                            <p class="text-muted mb-1">Segundo paso</p>
+                            <h6 class="mb-0">Adivina si tu amig@ juega con par o impar</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card shadow-0 border rounded-5">
+                        <div class="card-body text-center">
+                            <p class="text-muted mb-1">Tercer paso</p>
+                            <h6 class="mb-0">Gana quien obtenga las canicas del adversario</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container pt-3 d-md-none mt-5">
+            <!-- Mobile -->
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card shadow-0 border rounded-5">
+                        <div class="card-body text-center">
+                            <p class="text-muted mb-1">Instrucciones</p>
+                            <h6 class="mb-0">Escoje con cuantas canicas quieres jugar</h6>
+                            <h6 class="mb-0">Adivina si tu amig@ juega con par o impar</h6>
+                            <h6 class="mb-0">Gana quien obtenga las canicas del adversario</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END BANNERS -->
+        <!-- Container for demo purpose -->
+        <div class="container">
+
+            <!-- Section: Product details -->
+            <section class="mb-8">
+
+                <style>
+                    .custom-title {
+                        font-size: 3rem;
+                    }
+                    
+                    @media (min-width: 1025px) {
+                        .custom-title {
+                            font-size: 3.5rem;
+                        }
+                    }
+                    
+                    .rounded-custom {
+                        border-top-left-radius: .5rem;
+                        border-bottom-left-radius: .5rem;
+                    }
+                    
+                    @media (max-width: 767px) {
+                        .rounded-custom {
+                            border-top-left-radius: .5rem;
+                            border-bottom-left-radius: 0rem;
+                            border-top-right-radius: .5rem;
+                        }
+                    }
+                    
+                    .rounded-custom-2 {
+                        border-top-right-radius: .5rem;
+                        border-bottom-right-radius: .5rem;
+                    }
+                    
+                    @media (max-width: 767px) {
+                        .rounded-custom-2 {
+                            border-top-right-radius: 0rem;
+                            border-bottom-right-radius: .5rem;
+                            border-bottom-left-radius: .5rem;
+                        }
+                    }
+                </style>
+
+                <div class="row gx-0">
+                    <div class="col-md-6 d-flex align-items-center rounded-custom" style="background-color: #424242;">
+                        <div class="px-4 px-lg-5 py-1 py-lg-0">
+                            <h3 class=" lh-1 ls-tight mb-1">¿Cuantás canicas quieres jugar?</h3>
+                            <!--<p class="lead fw-normal text-muted">Fugiat nemo laboriosam suscipit voluptas ipsam voluptate tempora. Est distinctio asperiores vero fugiat aliquam.</p>-->
+                            <br>
+                            <div class="form-outline mb-4">
+                                <input type="number" id="typeNumber" class="form-control" value="1" min="1" max="10" />
+                                <label class="form-label" for="typeNumber">Cantidad</label>
+                            </div>
+                            <h3 class=" lh-1 ls-tight mb-1">¿Tu adversario jugará par o impar?</h3>
+                            <div class="d-grid gap-2 d-md-block">
+                                <button type="button" class="btn btn-primary btn-lg mt-3">Par</button>
+                                <button type="button" class="btn btn-secondary btn-lg mt-3">Impar</button>
+                            </div>
+                            <div class="text-center">
+                                <p>Seleccionaste: par</p>
+                                <button type="button" class="btn btn-outline-success" data-mdb-ripple-color="dark">
+                                    ¡JUGAR!
+                                  </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="yourDiv" class="col-md-6 rounded-custom-2" style="background-color: #424242; min-height: 300px;">
+                        <p class="lead fw-normal text-muted text-center">Tienes 10 canicas en bolsa</p>
+                        <!--<img class="w-100 rounded-custom-2" src="https://mdbootstrap.com/img/Photos/new-templates/img103.jpg" alt="">-->
+                        <script src="/js/bouncingballs.js"></script>
+                        <canvas id="myCanvas"></canvas>
+                        <style>
+
+                        </style>
+                        <script>
+                            show_boucing_balls(10);
+
+                            var canvas = document.getElementsByTagName('canvas')[0];
+                            var divHeight = document.getElementById('yourDiv').clientHeight;
+                            var divWidth = document.getElementById('yourDiv').clientWidth;
+
+                            canvas.height = divHeight;
+                            canvas.width = divWidth;
+                        </script>
+                    </div>
+                </div>
+            </section>
+            <section class="mb-8">
+                <div class="card shadow-0 border rounded-5">
+                    <div class="card-body text-center">
+                        <p class="text-muted mb-1">Más juegos</p>
+                        <div class="text-center">
+                            <button type="button" class="btn btn-info">Ver más juegos</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Section: Product details -->
+        </div>
+        <!-- Container for demo purpose -->
+    </main>
+
+    <!--Main Navigation-->
+    <div class="bottom-navbar">
+        <div class="d-flex text-center align-items-center mb-3" style="height: 60px;">
+            <div class="col">
+                <a class="nav-link active d-flex flex-column text-center" aria-current="page" href="#"><i class="fas fa-home fa-lg"></i><span class="small">Home</span></a>
+            </div>
+            <div class="col">
+                <a class="nav-link active d-flex flex-column text-center" aria-current="page" href="#"><i class="fas fa-home fa-lg"></i><span class="small">Juegos</span></a>
+            </div>
+            <div class="col">
+                <a class="nav-link active d-flex flex-column text-center" aria-current="page" href="#"><i class="fas fa-home fa-lg"></i><span class="small">Bebidas</span></a>
+            </div>
+            <div class="col">
+                <a class="nav-link active d-flex flex-column text-center" aria-current="page" href="#"><i class="fas fa-home fa-lg"></i><span class="small">Perfil</span></a>
+            </div>
+        </div>
+    </div>
+    <!--END Main Navigation-->
+
+    <footer class="text-white text-center text-lg-start bg-dark">
+        <!-- Grid container -->
+        <div class="container p-4">
+            <!--Grid row-->
+            <div class="row mt-4">
+                <!--Grid column-->
+                <div class="col-lg-4 col-md-12 mb-4 mb-md-0">
+                    <h5 class="text-uppercase mb-4">Jerry productions</h5>
+
+                    <p>
+                        Follow me:
+                    </p>
+                    <div class="mt-4">
+                        <!-- Facebook -->
+                        <a type="button" class="btn btn-floating btn-light btn-lg"><i class="fab fa-facebook-f"></i></a>
+                        <!-- Dribbble -->
+                        <a type="button" class="btn btn-floating btn-light btn-lg"><i class="fab fa-dribbble"></i></a>
+                        <!-- Twitter -->
+                        <a type="button" class="btn btn-floating btn-light btn-lg"><i class="fab fa-twitter"></i></a>
+                        <!-- Google + -->
+                        <a type="button" class="btn btn-floating btn-light btn-lg"><i class="fab fa-google-plus-g"></i></a>
+                        <!-- Google + -->
+                        <a type="button" class="btn btn-floating btn-light btn-lg"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <!--Grid column-->
+
+                <!--Grid column-->
+                <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+                    <!--
+                    <h5 class="text-uppercase mb-4 pb-1">Search something</h5>
+                    <div class="form-outline form-white mb-4">
+                        <input type="text" id="formControlLg" class="form-control form-control-lg" />
+                        <label class="form-label" for="formControlLg">Search</label>
+                            </div>
+                            -->
+                    <h5 class="text-uppercase mb-4 pb-1">Contacto</h5>
+                    <ul class="fa-ul" style="margin-left: 1.65em;">
+                        <li class="mb-3">
+                            <span class="fa-li"><i class="fas fa-envelope"></i></span><span class="ms-2">anuncios@example.com</span>
+                        </li>
+                        <li class="mb-3">
+                            <span class="fa-li"><i class="fas fa-envelope"></i></span><span class="ms-2">soporte@example.com</span>
+                        </li>
+                        <li class="mb-3">
+                            <span class="fa-li"><i class="fas fa-phone"></i></span><span class="ms-2">+ 48 234 567 88</span>
+                        </li>
+                    </ul>
+                </div>
+                <!--Grid column-->
+
+                <!--Grid column-->
+                <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase mb-0">Links</h5>
+                    <br>
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="#!" class="text-light">Política de privacidad</a>
+                        </li>
+                        <li>
+                            <a href="#!" class="text-light">Términos y condiciones</a>
+                        </li>
+                        <li>
+                            <a href="#!" class="text-light">FAQ</a>
+                        </li>
+                        <li>
+                            <a href="#!" class="text-light">Contacto</a>
+                        </li>
+                    </ul>
+                </div>
+                <!--Grid column-->
+            </div>
+            <!--Grid row-->
+        </div>
+        <!-- Grid container -->
+
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            Copyright &copy;
+            <script>
+                document.write(new Date().getFullYear())
+            </script> <a class="text-white" href="https://jerry2157.com/">Gerardo Magdaleno.</a> All Rights Reserved.
+            <div>Iconos diseñados por <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.es/" title="Flaticon">www.flaticon.es</a></div>
+        </div>
+        <!-- Copyright -->
+    </footer>
+    <div style="height: 60px;"></div>
+    <!-- End your project here-->
+</body>
+
+
+<!-- MDB ESSENTIAL -->
+<script type="text/javascript" src="/js/mdb.min.js"></script>
+<!-- MDB PLUGINS -->
+<script type="text/javascript" src="/plugins/js/all.min.js"></script>
+<!-- Custom scripts -->
+<script type="text/javascript"></script>
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.slim.js" integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
+
+</html>

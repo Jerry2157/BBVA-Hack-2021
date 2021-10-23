@@ -1,0 +1,409 @@
+<!--<div class="row">
+  {{#each notes}}
+  <div class="col-md-3">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title d-flex justify-content-between align-items-center">
+          {{ title }} <a href="/notes/edit/{{_id}}"><i class="fas fa-edit"></i></a>
+        </h4>
+        <p>{{ description }} </p>
+
+        <form action="/notes/delete/{{_id}}?_method=DELETE" method="POST">
+          <input type="hidden" name="_method" value="DELETE">
+          <button type="submit" class="btn btn-danger btn-block btn-sm">Delete</button>
+        </form>
+
+      </div>
+    </div>
+  </div>
+  {{else}}
+  <div class="card mx-auto">
+    <div class="card-body">
+      <h1>Hello {{user.name}}</h1>
+      <p clsss="lead">There are not Notes yet.</p>
+      <a href="/notes/add" class="btn btn-success btn-block">Create One!</a>
+    </div>
+  </div>
+  {{/each}}
+</div>
+-->
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" style="top: 58px;">
+    <div class="container-fluid">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">Estás en->
+                <li class="breadcrumb-item"><a href="/investments">Inversiones</a></li>
+                <li class="breadcrumb-item active" aria-current="page"><a href="#">Productos</a></li>
+            </ol>
+        </nav>
+    </div>
+</nav>
+<div style="min-height: 30px;"></div>
+
+<section class=" onboarding" data-mdb-start-trigger="#global-backdrop-trigger" data-mdb-start-event="click"
+    data-mdb-backdrop="true" data-mdb-backdrop-opacity="0.5">
+
+    <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop" data-mdb-backdrop="static" data-mdb-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Página inversiones</h5>
+                    <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Aquí va un texto de bienvenida a la página de inversiones. recuerda poner texto con base en
+                    Behaviour
+                    economics.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" data-mdb-dismiss="modal" id="global-backdrop-trigger">
+                        Comenzar tutorial
+                    </button>
+                    <!--<button type="button" class="btn btn-primary">Understood</button>-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Button trigger script -->
+    <script>
+        function LoadInLineScripts() {
+            const myModalEl = document.getElementById('staticBackdrop')
+            const modal = new mdb.Modal(myModalEl)
+            modal.show()
+        }
+    </script>
+    <!-- END Modal -->
+
+    <div class="container" id="init_banner">
+        <!-- Section: Banner Image -->
+        <section class="mb-4" style="margin-bottom: 2.0rem!important;">
+            <div class="bg-image rounded-bottom shadow-1-strong" style="
+              background-image: url('https://mdbootstrap.com/img/new/slides/297.jpg');
+              height: 60px;
+            "></div>
+
+            <div class="d-flex justify-content-center">
+                <img src="https://mdbootstrap.com/img/new/avatars/18.jpg"
+                    class="rounded-circle shadow-3-strong position-absolute" alt=""
+                    style="width: 70px; margin-top: -42px" />
+            </div>
+        </section>
+        <!-- Section: End Banner Image-->
+
+        <!-- Section: User data -->
+        <section class="text-center">
+            <div class="row d-flex justify-content-center">
+                <h2 style="margin-bottom: 0rem;"><strong>Productos de inversión</strong></h2>
+                <p style="margin-bottom: 0.5rem;">Gerardo</p>
+                <div class="col-lg-6">
+                </div>
+            </div>
+        </section>
+        <!-- Section: User data -->
+
+        <!-- Section: Buttons -->
+        <section class="d-flex text-center justify-content-between align-items-center py-1 border-bottom border-top"
+            data-mdb-step data-mdb-index="1" data-mdb-onboarding-content="Este es el primer paso">
+            <!-- Left -->
+            <div>
+                <a href="/investments" class="text-white">
+                    <button type="button" class="btn btn-link text-reset px-2" data-mdb-ripple-color="dark">
+                        Mis inversiones
+                    </button>
+                </a>
+                <a href="/investments" class="text-white">
+                    <button type="button" class="btn btn-link text-reset px-2" data-mdb-ripple-color="dark"
+                        data-mdb-step data-mdb-index="2"
+                        data-mdb-onboarding-content="Backdrop is set to false by default">
+                        Notificaciones<span class="badge bg-danger ms-1">0</span>
+                    </button>
+                </a>
+                <button type="button" class="btn btn-link text-reset px-2" data-mdb-ripple-color="dark" data-mdb-step
+                    data-mdb-index="3" data-mdb-onboarding-content="Backdrop is set to false by default">
+                    Metas
+                </button>
+                <button type="button" class="btn btn-link text-reset px-2" data-mdb-ripple-color="dark">
+                    Recomendaciones
+                </button>
+                <div class="dropdown d-inline-block">
+                    <button class="btn btn-outline-light text-reset px-2 dropdown-toggle" data-mdb-ripple-color="dark"
+                        type="button" id="dropdownMenuButton" data-mdb-toggle="dropdown" aria-expanded="false">
+                        Más
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <li><a class="dropdown-item active" href="#">Crear nueva inversión</a></li>
+                        <li><a class="dropdown-item" href="#">Recomendaciones</a></li>
+                        <li><a class="dropdown-item" href="#">Metas</a></li>
+                        <li><a class="dropdown-item" href="#">Balanca general</a></li>
+                        <li><a class="dropdown-item" href="#">Contacto</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Left -->
+
+            <!-- Right -->
+            <div class="d-none d-lg-block">
+                <button type="button" class="btn btn-light bg-light px-3 me-2" data-mdb-ripple-color="dark">
+                    <i class="fas fa-edit me-2"></i>Crear nueva inversión
+                </button>
+                <button type="button" class="btn btn-light bg-light px-3 me-2" data-mdb-ripple-color="dark">
+                    <i class="fas fa-phone me-2"></i>Contacto
+                </button>
+            </div>
+            <!-- Right -->
+        </section>
+        <!-- Section: Buttons -->
+
+        <!-- Section: User data -->
+        <!--
+    <section class="text-center ">
+      <div class="row d-flex justify-content-center">
+        <div class="col-lg-6">
+          <p class="text-muted" style="margin-bottom: 0.5rem;">
+            Este mes has generado: <strong class="text-success"><i class="fas fa-arrow-up"></i>
+              100.00 MXN</strong>
+          </p>
+          <div class="">
+            <button type="button" class="btn btn-light bg-light px-3 mb-2 border-bottom" data-mdb-ripple-color="dark">
+              <i class="fas fa-chart-line me-2"></i>Ver más detalles
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+    -->
+        <!-- Section: User data -->
+
+    </div>
+
+    <!-- Section: Grey background -->
+    <section class="mt-1">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5 mb-2 mb-md-0">
+                    <!-- Section: Intro -->
+                    <section class="mb-1 d-none d-lg-block">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title mt-1"><strong>Productos de Inversión de BBVA</strong></h5>
+                                <p>Aquí tienes una lista completa de productos de inversión que ofrece BBVA</p>
+
+                                <div class="ratio ratio-16x9">
+                                    <iframe src="https://www.youtube.com/embed/vlDzYIIOYmM" title="YouTube video"
+                                        allowfullscreen></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- Section: Intro -->
+                </div>
+
+                <div class="col-md-7 mb-2 mb-md-0">
+                    <!-- Section: Inversiones -->
+                    <section class="mb-1">
+                        <div class="card">
+                            <div class="card-body">
+                                <a href="" class="text-reset d-inline-block" data-mdb-step data-mdb-index="4"
+                                    data-mdb-onboarding-content="Backdrop is set to false by default">
+                                    <h5 class="card-title mt-1 mb-1">
+                                        <strong id="inv_section" data-mdb-step data-mdb-index="6"
+                                            data-mdb-onboarding-content="Backdrop is set to false by default">Productos
+                                            de Inversión de BBVA</strong>
+                                    </h5>
+                                </a>
+
+                                <div class="d-lg-none mb-1">
+                                    <p class="mb-1">Aquí tienes una lista completa de productos de inversión que ofrece BBVA</p>
+                                    <!-- Button trigger modal -->
+                                    <div class="text-end">
+                                        <button type="button" class="btn btn-primary m-1" data-mdb-toggle="modal"
+                                            data-mdb-target="#exampleSideModal1">
+                                            Recomendaciones
+                                        </button>
+                                    </div>
+
+                                    <!-- Modal example - top right -->
+                                    <div class="modal fade right" id="exampleSideModal1" tabindex="-1"
+                                        aria-labelledby="exampleSideModal1" aria-hidden="true">
+                                        <div class="modal-dialog modal-side modal-top-right">
+                                            <div class="modal-content">
+                                                <div class="modal-header bg-info text-white">
+                                                    <h5 class="modal-title" id="exampleSideModal1">Video de recomendaciones
+                                                    </h5>
+                                                    <button type="button" class="btn-close btn-close-white"
+                                                        data-mdb-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="row">
+                                                        <div class="ratio ratio-16x9">
+                                                            <iframe src="https://www.youtube.com/embed/vlDzYIIOYmM"
+                                                                title="YouTube video" allowfullscreen></iframe>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-outline-info"
+                                                        data-mdb-dismiss="modal">
+                                                        Cerrar
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <hr class="mb-1">
+
+                                <a href="" class="text-reset d-inline-block">
+                                    <h5 class="card-title mt-1 mb-1">
+                                        <strong id="inv_section">Lista de productos</strong>
+                                    </h5>
+                                </a>
+
+                                <div class="card shadow-0 border" style="margin-bottom: 2rem;">
+                                    <div class="card-body border-bottom">
+                                        <div class="row">
+                                            <div class="col-md-2 col-2 mb-4">
+                                                <img src="https://mdbootstrap.com/img/Photos/new-templates/img100.jpg"
+                                                    class="img-fluid rounded-5">
+                                            </div>
+                                            <div class="col-md-10 col-10">
+                                                <div class="d-flex justify-content-between pb-1">
+                                                    <h6>Producto 1</h6>
+                                                    <h6>Rendimiento +2.0</h6>
+                                                </div>
+                                                <p class="text-muted">Descripción de producto 1.</p>
+                                            </div>
+                                        </div>
+                                        <div class="d-md-flex justify-content-between align-items-center mb-n1">
+                                            <p class="mb-2 mb-md-0">
+                                                <i class="fas fa-check-circle text-success pe-1"></i>
+                                                <span class="text-muted">Riesgo bajo</span>
+                                            </p>
+                                            <div>
+                                                <a href="#!">Más info</a>
+                                                <span class="px-3" style="color: #aaa;">|</span>
+                                                <a href="#!">Contratar</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-body border-bottom">
+                                        <div class="row">
+                                            <div class="col-md-2 col-2 mb-4">
+                                                <img src="https://mdbootstrap.com/img/Photos/new-templates/img100.jpg"
+                                                    class="img-fluid rounded-5">
+                                            </div>
+                                            <div class="col-md-10 col-10">
+                                                <div class="d-flex justify-content-between pb-1">
+                                                    <h6>Fondo BBVA DdLP</h6>
+                                                    <h6>Rendimiento +6.0</h6>
+                                                </div>
+                                                <p class="text-muted">Fondo de inversión a largo plazo.</p>
+                                            </div>
+                                        </div>
+                                        <div class="d-md-flex justify-content-between align-items-center mb-n1">
+                                            <p class="mb-2 mb-md-0">
+                                                <i class="fas fa-check-circle text-warning pe-1"></i>
+                                                <span class="text-muted">Riesgo medio</span>
+                                            </p>
+                                            <div>
+                                                <a href="#!">Más info</a>
+                                                <span class="px-3" style="color: #aaa;">|</span>
+                                                <a href="#!">Contratar</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-body border-bottom">
+                                        <div class="row">
+                                            <div class="col-md-2 col-2 mb-4">
+                                                <img src="https://mdbootstrap.com/img/Photos/new-templates/img100.jpg"
+                                                    class="img-fluid rounded-5">
+                                            </div>
+                                            <div class="col-md-10 col-10">
+                                                <div class="d-flex justify-content-between pb-1">
+                                                    <h6>Fondo Peligroso</h6>
+                                                    <h6>Rendimiento +8.0</h6>
+                                                </div>
+                                                <p class="text-muted">Fondo de inversión a largo plazo.</p>
+                                            </div>
+                                        </div>
+                                        <div class="d-md-flex justify-content-between align-items-center mb-n1">
+                                            <p class="mb-2 mb-md-0">
+                                                <i class="fas fa-check-circle text-danger pe-1"></i>
+                                                <span class="text-muted">Riesgo Alto</span>
+                                            </p>
+                                            <div>
+                                                <a href="#!">Más info</a>
+                                                <span class="px-3" style="color: #aaa;">|</span>
+                                                <a href="#!">Contratar</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--
+                <div class="d-lg-flex text-center justify-content-center">
+                  <button type="button" class="btn btn-info w-md-100 me-lg-3 mb-lg-0">
+                    Mes siguiente
+                  </button>
+                  <button type="button" class="btn btn-primary w-md-100 ">
+                    Mes anterior
+                  </button>
+                </div>
+                -->
+                            </div>
+                    </section>
+                    <!-- Section: Inversiones -->
+
+
+                </div>
+                <!-- Section: Intro -->
+                <section class="mb-4">
+                    <div class="card" data-mdb-step data-mdb-index="5"
+                        data-mdb-onboarding-content="Backdrop is set to false by default">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <img src="https://mdbootstrap.com/img/new/slides/041.jpg" alt="..." class="img-fluid"
+                                    style="object-fit: cover;" />
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">Lista de recomendaciones</h5>
+                                    <p class="card-text">
+                                        Ve la lista de recomendaciones que BBVA seleccionó para que puedas aumentar y
+                                        mejorar tus
+                                        inversiones
+                                        de
+                                        manera sencilla.
+                                    </p>
+                                    <button type="button" class="btn btn-outline-info" data-mdb-ripple-color="dark">
+                                        Ver lista de recomendaciones
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- Section: Intro -->
+            </div>
+        </div>
+    </section>
+    <section class="text-center border-bottom">
+        <div class="row d-flex justify-content-center">
+            <div class="col-lg-6">
+                <a href="#init_banner" data-mdb-smooth-scroll="smooth-scroll">
+                    <i class="fas fa-chevron-up me-2"></i>
+                    <h3><strong>Subir</strong></h3>
+                </a>
+                <div>
+                </div>
+                <br>
+            </div>
+        </div>
+    </section>
+    <div class="container" style="min-height: 250px;"></div>
+    <br>
+    <br>
+</section>

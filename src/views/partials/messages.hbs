@@ -1,0 +1,15 @@
+{{#if success_msg }}
+  <div class="alert alert-dismissible fade show" role="alert" data-mdb-color="success">
+    {{success_msg}}
+  <button type="button" class="btn-close" data-mdb-dismiss="alert" aria-label="Close">
+  </button>
+</div>
+{{/if}}
+
+{{#if error_msg }}
+  <div class="alert alert-dismissible fade show" role="alert" data-mdb-color="danger">
+    {{error_msg}}
+  <button type="button" class="btn-close" data-mdb-dismiss="alert" aria-label="Close">
+  </button>
+</div>
+{{/if}}

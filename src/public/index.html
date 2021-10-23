@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Material Design for Bootstrap</title>
+    <!-- MDB icon -->
+    <link rel="icon" href="img/mdb-favicon.ico" type="image/x-icon" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" />
+    <script src="https://kit.fontawesome.com/9d51fa0780.js" crossorigin="anonymous"></script>
+    <!-- Google Fonts Roboto -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- MDB ESSENTIAL -->
+    <!--<link rel="stylesheet" href="css/mdb.min.css" />-->
+    <link rel="stylesheet" href="css/mdb.dark.min.css" />
+    <!-- MDB PLUGINS -->
+    <link rel="stylesheet" href="plugins/css/all.min.css" />
+    <!-- Custom global styles -->
+    <link rel="stylesheet" href="css/custom.css" />
+    <!-- Custom styles -->
+    <style></style>
+</head>
+
+<body>
+    <!-- Start your project here-->
+
+    <!--Main Navigation-->
+    <header>
+        <!-- Sidenav -->
+        <div id="sidenav-1" class="sidenav" data-mdb-hidden="true" data-mdb-accordion="true">
+            <a class="ripple d-flex justify-content-center py-4" href="#!" data-mdb-ripple-color="primary">
+                <img id="MDB-logo" src="https://jerry2157.com/wp-content/uploads/2021/10/cupfiesta_logo_temp.png" alt="MDB Logo" draggable="false" style="max-width: 80%;" />
+            </a>
+
+            <ul class="sidenav-menu">
+                <li class="sidenav-item">
+                    <a class="sidenav-link" href="">
+                        <i class="fas fa-chart-area fa-fw me-3"></i><span>Webiste traffic</span></a>
+                </li>
+                <li class="sidenav-item">
+                    <a class="sidenav-link"><i class="fas fa-cogs fa-fw me-3"></i><span>Settings</span></a>
+                    <ul class="sidenav-collapse">
+                        <li class="sidenav-item">
+                            <a class="sidenav-link">Profile</a>
+                        </li>
+                        <li class="sidenav-item">
+                            <a class="sidenav-link">Account</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="sidenav-item">
+                    <a class="sidenav-link"><i class="fas fa-lock fa-fw me-3"></i><span>Password</span></a>
+                    <ul class="sidenav-collapse">
+                        <li class="sidenav-item">
+                            <a class="sidenav-link">Request password</a>
+                        </li>
+                        <li class="sidenav-item">
+                            <a class="sidenav-link">Reset password</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="sidenav-item">
+                    <a class="sidenav-link" href="">
+                        <i class="fas fa-chart-line fa-fw me-3"></i><span>Analytics</span></a>
+                </li>
+                <li class="sidenav-item">
+                    <a class="sidenav-link" href="">
+                        <i class="fas fa-chart-pie fa-fw me-3"></i><span>SEO</span></a>
+                </li>
+                <li class="sidenav-item">
+                    <a class="sidenav-link" href="">
+                        <i class="fas fa-chart-bar fa-fw me-3"></i><span>Orders</span></a>
+                </li>
+                <li class="sidenav-item">
+                    <a class="sidenav-link" href="">
+                        <i class="fas fa-globe fa-fw me-3"></i><span>International</span></a>
+                </li>
+                <li class="sidenav-item">
+                    <a class="sidenav-link" href="">
+                        <i class="fas fa-building fa-fw me-3"></i><span>Partners</span></a>
+                </li>
+                <li class="sidenav-item">
+                    <a class="sidenav-link" href="">
+                        <i class="fas fa-calendar fa-fw me-3"></i><span>Calendar</span></a>
+                </li>
+                <li class="sidenav-item">
+                    <a class="sidenav-link" href="">
+                        <i class="fas fa-users fa-fw me-3"></i><span>Users</span></a>
+                </li>
+                <li class="sidenav-item">
+                    <a class="sidenav-link" href="">
+                        <i class="fas fa-money-bill fa-fw me-3"></i><span>Sales</span></a>
+                </li>
+            </ul>
+        </div>
+        <!-- Sidenav -->
+
+        <!-- Navbar -->
+        <nav id="main-navbar" class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+            <!-- Container wrapper -->
+            <div class="container-fluid">
+                <!-- Toggler -->
+                <button data-mdb-toggle="sidenav" data-mdb-target="#sidenav-1" class="btn shadow-0 p-0 me-4" aria-controls="#sidenav-1" aria-haspopup="true">
+                  <i class="fas fa-bars fa-lg"></i>
+                </button>
+
+                <a class="navbar-brand d-none d-md-flex" href="#!" data-toggle="sidenav" data-target="#sidenav-1">
+                    <img src="https://jerry2157.com/wp-content/uploads/2021/10/cupfiesta_logo_temp.png" height="40" alt="" loading="lazy" />
+                </a>
+
+                <!-- Search form -->
+                <form class="d-none d-md-flex input-group w-auto my-auto">
+                    <input autocomplete="off" type="search" class="form-control rounded" placeholder='Buscar juegos y bebidas' style="min-width: 225px" />
+                    <span class="input-group-text border-0"><i class="fas fa-search"></i></span>
+                </form>
+
+                <!-- Right links -->
+                <ul class="navbar-nav ms-auto d-flex flex-row">
+                    <!-- Icon -->
+                    <li class="nav-item">
+                        <a class="nav-link me-3 me-lg-0" href="#">
+                            <i class="fas fa-fill-drip"></i>
+                        </a>
+                    </li>
+                    <!-- Icon -->
+                    <li class="nav-item me-3 me-lg-0">
+                        <a class="nav-link" href="#">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </li>
+
+                    <!-- Icon dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link me-3 me-lg-0 dropdown-toggle hidden-arrow" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+                            <i class="united kingdom flag m-0"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            <li>
+                                <a class="dropdown-item" href="#"><i class="united kingdom flag"></i>English
+                  <i class="fa fa-check text-success ms-2"></i></a>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider" />
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#"><i class="poland flag"></i>Polski</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#"><i class="china flag"></i>中文</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#"><i class="japan flag"></i>日本語</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#"><i class="germany flag"></i>Deutsch</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#"><i class="france flag"></i>Français</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#"><i class="spain flag"></i>Español</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#"><i class="russia flag"></i>Русский</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#"><i class="portugal flag"></i>Português</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <!-- Avatar -->
+                    <button class="btn btn-sm btn-outline-primary mx-2" type="button" data-ripple-color="dark">
+            Sign up
+            <i class="fas fa-lock ms-1"></i>
+          </button>
+                </ul>
+            </div>
+            <!-- Container wrapper -->
+        </nav>
+        <!-- Navbar -->
+    </header>
+
+    <!--Main Navigation-->
+    <div style="height: 5vh;"></div>
+    <main style="min-height: 100vh;">
+        <div class="container pt-5">
+            <div class="d-flex justify-content-left">
+                <div class="text-left" style="max-width: 700px">
+                    <h2 class="fw-bold mb-4">Populares</h2>
+                </div>
+            </div>
+            <div class="scrolling-wrapper">
+                <div class="scrolling-card ms-2 me-2">
+                    <img src="https://mdbootstrap.com/img/new/standard/nature/184.jpg" class="card-img-top card-img-bottom object-fit-contain" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title text-truncate">Verdad o reto</h5>
+                        <p class="card-text">Here goes the very long description. Here goes the very long description.</p>
+                        <a href="#!" class="btn btn-primary">Jugar</a>
+                    </div>
+                </div>
+                <div class="scrolling-card ms-2 me-2">
+                    <img src="https://mdbootstrap.com/img/Photos/Vertical/4.jpg" class="card-img-top card-img-bottom object-fit-contain" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">¿Qué prefieres?</h5>
+                        <p class="card-text">Here goes the description.</p>
+                        <a href="#!" class="btn btn-primary">Jugar</a>
+                    </div>
+                </div>
+                <div class="scrolling-card ms-2 me-2">
+                    <img src="https://mdbootstrap.com/img/new/standard/nature/184.jpg" class="card-img-top card-img-bottom object-fit-contain" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Here goes the description.</p>
+                        <a href="#!" class="btn btn-primary">Jugar</a>
+                    </div>
+                </div>
+                <div class="scrolling-card ms-2 me-2">
+                    <img src="https://mdbootstrap.com/img/Photos/Vertical/4.jpg" class="card-img-top card-img-bottom object-fit-contain" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Here goes the description.</p>
+                        <a href="#!" class="btn btn-primary">Jugar</a>
+                    </div>
+                </div>
+                <div class="scrolling-card ms-2 me-2">
+                    <img src="https://mdbootstrap.com/img/new/standard/nature/184.jpg" class="card-img-top card-img-bottom object-fit-contain" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Here goes the description.</p>
+                        <a href="#!" class="btn btn-primary">Jugar</a>
+                    </div>
+                </div>
+                <div class="scrolling-card ms-2 me-2">
+                    <img src="https://mdbootstrap.com/img/Photos/Vertical/4.jpg" class="card-img-top card-img-bottom object-fit-contain" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Here goes the description.</p>
+                        <a href="#!" class="btn btn-primary">Button</a>
+                    </div>
+                </div>
+                <div class="scrolling-card ms-2 me-2">
+                    <img src="https://mdbootstrap.com/img/new/standard/nature/184.jpg" class="card-img-top card-img-bottom object-fit-contain" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Here goes the description.</p>
+                        <a href="#!" class="btn btn-primary">Jugar</a>
+                    </div>
+                </div>
+                <div class="scrolling-card ms-2 me-2">
+                    <img src="https://mdbootstrap.com/img/Photos/Vertical/4.jpg" class="card-img-top card-img-bottom object-fit-contain" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Here goes the description.</p>
+                        <a href="#!" class="btn btn-primary">Button</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- START BANNERS -->
+        <div class="container pt-5 d-none d-md-block">
+            <div class="d-flex justify-content-left">
+                <div class="text-left" style="max-width: 700px">
+                    <h2 class="fw-bold mb-4">Últimos lanzamientos</h2>
+                </div>
+            </div>
+            <div class="scrolling-wrapper">
+                <div class="scrolling-card-banner ms-2 me-2">
+                    <a href="#!" class="">
+                        <img src="https://mdbootstrap.com/img/new/standard/nature/184.jpg" class="card-img-top card-img-bottom object-fit-contain-card-banner" alt="...">
+                    </a>
+                </div>
+                <div class="scrolling-card-banner ms-2 me-2">
+                    <a href="#!" class="">
+                        <img src="https://mdbootstrap.com/img/new/standard/nature/184.jpg" class="card-img-top card-img-bottom object-fit-contain-card-banner" alt="...">
+                    </a>
+                </div>
+                <div class="scrolling-card-banner ms-2 me-2">
+                    <a href="#!" class="">
+                        <img src="https://mdbootstrap.com/img/new/standard/nature/184.jpg" class="card-img-top card-img-bottom object-fit-contain-card-banner" alt="...">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="container pt-5 d-md-none">
+            <div class="d-flex justify-content-left">
+                <div class="text-left" style="max-width: 700px">
+                    <h2 class="fw-bold mb-4">Últimos lanzamientos</h2>
+                </div>
+            </div>
+            <div class="my-4">
+                <a href="#!" class="ripple">
+                    <img src="https://mdbootstrap.com/img/new/slides/041.jpg" class="img-fluid rounded hover-shadow" alt="..." />
+                </a>
+            </div>
+            <div class="my-4">
+                <a href="#!" class="ripple">
+                    <img src="https://mdbootstrap.com/img/new/slides/041.jpg" class="img-fluid rounded hover-shadow" alt="..." />
+                </a>
+            </div>
+            <div class="my-4">
+                <a href="#!" class="ripple">
+                    <img src="https://mdbootstrap.com/img/new/slides/041.jpg" class="img-fluid rounded hover-shadow" alt="..." />
+                </a>
+            </div>
+        </div>
+        <!-- END BANNERS -->
+    </main>
+
+    <!--Main Navigation-->
+    <div class="bottom-navbar">
+        <div class="d-flex text-center align-items-center mb-3" style="height: 60px;">
+            <div class="col">
+                <a class="nav-link active d-flex flex-column text-center" aria-current="page" href="#"><i class="fas fa-home fa-lg"></i><span class="small">Home</span></a>
+            </div>
+            <div class="col">
+                <a class="nav-link active d-flex flex-column text-center" aria-current="page" href="#"><i class="fas fa-home fa-lg"></i><span class="small">Juegos</span></a>
+            </div>
+            <div class="col">
+                <a class="nav-link active d-flex flex-column text-center" aria-current="page" href="#"><i class="fas fa-home fa-lg"></i><span class="small">Bebidas</span></a>
+            </div>
+            <div class="col">
+                <a class="nav-link active d-flex flex-column text-center" aria-current="page" href="#"><i class="fas fa-home fa-lg"></i><span class="small">Perfil</span></a>
+            </div>
+        </div>
+    </div>
+    <!--END Main Navigation-->
+
+    <footer class="text-white text-center text-lg-start bg-dark">
+        <!-- Grid container -->
+        <div class="container p-4">
+            <!--Grid row-->
+            <div class="row mt-4">
+                <!--Grid column-->
+                <div class="col-lg-4 col-md-12 mb-4 mb-md-0">
+                    <h5 class="text-uppercase mb-4">Jerry productions</h5>
+
+                    <p>
+                        Follow me:
+                    </p>
+                    <div class="mt-4">
+                        <!-- Facebook -->
+                        <a type="button" class="btn btn-floating btn-light btn-lg"><i class="fab fa-facebook-f"></i></a>
+                        <!-- Dribbble -->
+                        <a type="button" class="btn btn-floating btn-light btn-lg"><i class="fab fa-dribbble"></i></a>
+                        <!-- Twitter -->
+                        <a type="button" class="btn btn-floating btn-light btn-lg"><i class="fab fa-twitter"></i></a>
+                        <!-- Google + -->
+                        <a type="button" class="btn btn-floating btn-light btn-lg"><i class="fab fa-google-plus-g"></i></a>
+                        <!-- Google + -->
+                        <a type="button" class="btn btn-floating btn-light btn-lg"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <!--Grid column-->
+
+                <!--Grid column-->
+                <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+                    <!--
+                    <h5 class="text-uppercase mb-4 pb-1">Search something</h5>
+                    <div class="form-outline form-white mb-4">
+                        <input type="text" id="formControlLg" class="form-control form-control-lg" />
+                        <label class="form-label" for="formControlLg">Search</label>
+                    </div>
+                    -->
+                    <h5 class="text-uppercase mb-4 pb-1">Contacto</h5>
+                    <ul class="fa-ul" style="margin-left: 1.65em;">
+                        <li class="mb-3">
+                            <span class="fa-li"><i class="fas fa-envelope"></i></span><span class="ms-2">anuncios@example.com</span>
+                        </li>
+                        <li class="mb-3">
+                            <span class="fa-li"><i class="fas fa-envelope"></i></span><span class="ms-2">soporte@example.com</span>
+                        </li>
+                        <li class="mb-3">
+                            <span class="fa-li"><i class="fas fa-phone"></i></span><span class="ms-2">+ 48 234 567 88</span>
+                        </li>
+                    </ul>
+                </div>
+                <!--Grid column-->
+
+                <!--Grid column-->
+                <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase mb-0">Links</h5>
+                    <br>
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="#!" class="text-light">Política de privacidad</a>
+                        </li>
+                        <li>
+                            <a href="#!" class="text-light">Términos y condiciones</a>
+                        </li>
+                        <li>
+                            <a href="#!" class="text-light">FAQ</a>
+                        </li>
+                        <li>
+                            <a href="#!" class="text-light">Contacto</a>
+                        </li>
+                    </ul>
+                </div>
+                <!--Grid column-->
+            </div>
+            <!--Grid row-->
+        </div>
+        <!-- Grid container -->
+
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            Copyright &copy;
+            <script>
+                document.write(new Date().getFullYear())
+            </script> <a class="text-white" href="https://jerry2157.com/">Gerardo Magdaleno.</a> All Rights Reserved.
+            <div>Iconos diseñados por <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.es/" title="Flaticon">www.flaticon.es</a></div>
+        </div>
+        <!-- Copyright -->
+    </footer>
+    <div style="height: 60px;"></div>
+    <!-- End your project here-->
+</body>
+
+
+<!-- MDB ESSENTIAL -->
+<script type="text/javascript" src="/js/mdb.min.js"></script>
+<!-- MDB PLUGINS -->
+<script type="text/javascript" src="/plugins/js/all.min.js"></script>
+<!-- Custom scripts -->
+<script type="text/javascript" src="js/infinite_scroll.js"></script>
+<script type="text/javascript"></script>
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.slim.js" integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
+
+</html>

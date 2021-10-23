@@ -1,0 +1,161 @@
+<div class="row">
+  {{#each notes}}
+  <div class="col-md-3">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title d-flex justify-content-between align-items-center">
+          {{ title }} <a href="/notes/edit/{{_id}}"><i class="fas fa-edit"></i></a>
+        </h4>
+        <p>{{ description }} </p>
+        <form action="/notes/delete/{{_id}}?_method=DELETE" method="POST">
+          <input type="hidden" name="_method" value="DELETE">
+          <button type="submit" class="btn btn-danger btn-block btn-sm">Delete</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  {{else}}
+  <div class="card mx-auto">
+    <div class="card-body">
+      <h1>Hello {{user.name}}</h1>
+      <p clsss="lead">There are not Notes yet.</p>
+      <a href="/notes/add" class="btn btn-success btn-block">Create One!</a>
+    </div>
+  </div>
+  {{/each}}
+</div>
+
+
+
+<!-- Section: Grey background -->
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-5 mb-4 mb-md-0">
+        <!-- Section: Intro -->
+        <section class="mb-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title mt-1 mb-4"><strong>Instrucciones de prueba</strong></h5>
+
+              <ul class="list-unstyled text-muted">
+                <li><i class="fas fa-globe fa-fw me-3 mb-3"></i>Da click en una transacción para editar o eliminar</li>
+              </ul>
+
+              <button type="button" class="btn btn-light bg-light btn-block mb-4" data-mdb-ripple-color="dark">
+                Agregar nueva transacción
+              </button>
+            </div>
+          </div>
+        </section>
+        <!-- Section: Intro -->
+      </div>
+
+      <div class="col-md-7 mb-4 mb-md-0">
+        <!-- Section: Photos -->
+        <section class="mb-4">
+          <div class="card">
+            <div class="card-body">
+              <a href="" class="text-reset d-inline-block">
+                <h5 class="card-title mt-1 mb-4">
+                  <strong>Transacciones</strong>
+                </h5>
+              </a>
+
+              <div class="card shadow-0 border" style="margin-bottom: 2rem;">
+                <div class="card-header p-4">
+                  <div class="row align-items-center">
+                    <div class="col-lg-6 col-md-7">
+                      <div class="row text-center text-md-start">
+                        <div class="col-md-4 mb-3 mb-md-0">
+                          <h6>Cuenta</h6>
+                          <p class="mb-0 text-muted" style="line-height: 1.1;">WU88191111</p>
+                        </div>
+                        <div class="col-md-4 mb-3 mb-md-0">
+                          <h6>Mes</h6>
+                          <p class="mb-0 text-muted" style="line-height: 1.1;">Octubre</p>
+                        </div>
+                        <div class="col-md-4 mb-3 mb-md-0">
+                          <h6>Balance en cuenta</h6>
+                          <h6 class="mb-0" style="line-height: 1.1;"><strong>$2,600.00 MXN</strong></h6>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-6 col-md-5 d-lg-flex justify-content-end">
+                      <button type="button" class="btn btn-info w-md-100 me-lg-3 mb-2 mb-lg-0">
+                        Invertir
+                      </button>
+                      <button type="button" class="btn btn-primary w-md-100">
+                        Pagar servicios
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-body border-bottom">
+                  <div class="row">
+                    <div class="col-md-1 col-2 mb-4">
+                      <img src="/img/icons/down-arrow.png" class="img-fluid rounded-5">
+                    </div>
+                    <div class="col-md-11 col-10">
+                      <div class="d-flex justify-content-between pb-1">
+                        <h6>Vegan Leather Bag</h6>
+                        <h6>$100.00</h6>
+                      </div>
+                      <p class="text-muted">Gastos en general.</p>
+                    </div>
+                  </div>
+                  <div class="d-md-flex justify-content-between align-items-center mb-n1">
+                    <p class="mb-2 mb-md-0">
+                      <i class="fas fa-check-circle text-success pe-1"></i>
+                      <span class="text-muted">20/10/2021</span>
+                    </p>
+                    <div>
+                      <a href="#!">Eliminar</a>
+                      <span class="px-3" style="color: #aaa;">|</span>
+                      <a href="#!">Editar</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-md-1 col-2 mb-4">
+                      <img src="/img/icons/up-arrow.png" class="img-fluid rounded-5">
+                    </div>
+                    <div class="col-md-11 col-10">
+                      <div class="d-flex justify-content-between pb-1">
+                        <h6>Ceramic Cup</h6>
+                        <h6>$30.00</h6>
+                      </div>
+                      <p class="text-muted">Educación.</p>
+                    </div>
+                  </div>
+                  <div class="d-md-flex justify-content-between align-items-center mb-n1">
+                    <p class="mb-2 mb-md-0">
+                      <i class="fas fa-check-circle text-success pe-1"></i>
+                      <span class="text-muted">20/10/2021</span>
+                    </p>
+                    <div>
+                      <a href="#!">Eliminar</a>
+                      <span class="px-3" style="color: #aaa;">|</span>
+                      <a href="#!">Editar</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="d-lg-flex justify-content-center">
+                <button type="button" class="btn btn-info w-md-100 me-lg-3 mb-2 mb-lg-0">
+                  Mes siguiente
+                </button>
+                <button type="button" class="btn btn-primary w-md-100">
+                  Mes anterior
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- Section: Photos -->
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Section: Grey background -->

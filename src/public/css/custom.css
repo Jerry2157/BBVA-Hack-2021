@@ -1,0 +1,155 @@
+body {
+    background-color: #fbfbfb;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background-color: hsl(218, 41%, 15%);
+    background-image: radial-gradient( 650px circle at 0% 0%, hsl(218, 41%, 35%) 15%, hsl(218, 41%, 30%) 35%, hsl(218, 41%, 20%) 75%, hsl(218, 41%, 19%) 80%, transparent 100%), radial-gradient( 1250px circle at 100% 100%, hsl(218, 41%, 45%) 15%, hsl(218, 41%, 30%) 35%, hsl(218, 41%, 20%) 75%, hsl(218, 41%, 19%) 80%, transparent 100%);
+    height: 100%;
+    /*padding-left: 70px;*/
+    overflow-x: hidden;
+    color: #fff;
+}
+
+@media (max-width: 991.98px) {
+    body {
+        height: 100%;
+    }
+}
+
+.bg-theme {
+    background-color: hsl(218, 41%, 25%);
+}
+
+.bg-glass {
+    background: hsla(0, 0%, 100%, 0.15);
+    backdrop-filter: blur(30px);
+}
+
+.text-muted {
+    color: hsl(0, 0%, 80%) !important;
+}
+
+.text-success {
+    color: hsl(144, 100%, 40.9%) !important;
+}
+
+.text-danger {
+    color: hsl(350, 94.3%, 68.4%) !important;
+}
+
+.border-bottom {
+    border-bottom: 1px solid hsl(0, 0%, 50%) !important;
+}
+
+.badge {
+    padding: 5px 10px;
+}
+
+.sidenav {
+    background-color: hsl(218, 41%, 15%);
+}
+
+.sidenav-link.active {
+    color: #b15c7c !important;
+}
+
+.sidenav-link:active {
+    color: #b15c7c !important;
+}
+
+.sidenav-link:focus {
+    color: #b15c7c !important;
+}
+
+.bottom-navbar {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    background: hsla(0, 0%, 100%, 0.15);
+    backdrop-filter: blur(30px);
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.nav-link {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.nav-link:hover {
+    color: rgb(255, 255, 255);
+}
+
+.scrolling-wrapper {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+}
+
+.scrolling-card {
+    display: inline-block;
+    max-width: 250px;
+    max-height: 250px;
+}
+
+.object-fit-contain {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.card-body {
+    padding: 0.5rem;
+}
+
+.card-title {
+    height: 30px;
+}
+
+.card-text {
+    height: 56px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    white-space: initial;
+}
+
+.scrolling-card-banner {
+    display: inline-block;
+    max-width: 320;
+    max-height: 240px;
+}
+
+.object-fit-contain-card-banner {
+    width: 426px;
+    height: 240px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.hide-in-mobile {}
+
+.hide-in-desktop {}
+
+.row {
+    --mdb-gutter-x: 0.5rem;
+}
+
+.btn {
+    padding: .5rem 1.5rem .5rem;
+}
+
+
+/*
+Colors:
+#071a20
+#e9a1aa
+#b15c7c
+#3f3e53
+#b9a5d1
+*/
