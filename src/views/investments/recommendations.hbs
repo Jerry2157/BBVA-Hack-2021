@@ -49,12 +49,11 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="staticBackdropLabel">Página inversiones</h5>
+          <h5 class="modal-title" id="staticBackdropLabel">Bienvenido</h5>
           <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          Aquí va un texto de bienvenida a la página de inversiones. recuerda poner texto con base en Behaviour
-          economics.
+          ¡Muchas felicidades! Ya estás más cerca de aprovechar tu dinero al máximo, déjanos presentarte la sección de inversiones. 
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-success" data-mdb-dismiss="modal" id="global-backdrop-trigger">
@@ -70,7 +69,7 @@
     function LoadInLineScripts() {
       const myModalEl = document.getElementById('staticBackdrop')
       const modal = new mdb.Modal(myModalEl)
-      modal.show()
+      //modal.show()
     }
   </script>
   <!-- END Modal -->
@@ -103,7 +102,7 @@
 
     <!-- Section: Buttons -->
     <section class="d-flex text-center justify-content-between align-items-center py-1 border-bottom border-top" data-mdb-step data-mdb-index="1"
-          data-mdb-onboarding-content="Este es el primer paso">
+          data-mdb-onboarding-content="Estas son las secciones de tu plataforma de Inversiones">
       <!-- Left -->
       <div>
         <a href="/investments" class="text-white">
@@ -113,13 +112,13 @@
         </a>
         <a href="/investments/notifications" class="text-white">
         <button type="button" class="btn btn-link text-reset px-2" data-mdb-ripple-color="dark" data-mdb-step
-          data-mdb-index="2" data-mdb-onboarding-content="Backdrop is set to false by default">
+          data-mdb-index="2" data-mdb-onboarding-content="Aquí podrás ver los mensajes sobre el desempeño de tus fondos, ejecución de órdenes, etc.">
           Notificaciones<span class="badge bg-danger ms-1">0</span>
         </button>
         </a>
         <a href="/investments/goals" class="text-white">
         <button type="button" class="btn btn-link text-reset px-2" data-mdb-ripple-color="dark" data-mdb-step
-          data-mdb-index="3" data-mdb-onboarding-content="Backdrop is set to false by default">
+          data-mdb-index="3" data-mdb-onboarding-content="Aquí podrás ver como vas hacia el cumplimiento de tus metas y también puedes editar tus objetivos. ">
           Metas
         </button>
         </a>
