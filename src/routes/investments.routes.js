@@ -12,11 +12,15 @@ const {
     renderWelcomeInvestments,
     Recommendations,
     AllProducts,
-    RecommendedProducts
+    RecommendedProducts,
+    renderWizardInvestments
 } = require("../controllers/investments.controller");
 
 // Helpers
 const { isAuthenticated } = require("../helpers/auth");
+
+// Wizard inversiones
+router.get("/investments/wizard-investments", isAuthenticated, renderWizardInvestments);
 
 // Stepper inversiones
 router.get("/investments/welcome-investments", isAuthenticated, renderWelcomeInvestments);

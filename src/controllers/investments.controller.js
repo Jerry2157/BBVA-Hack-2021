@@ -8,6 +8,10 @@ investmentsCtrl.renderWelcomeInvestments = (req, res) => {
     res.render("investments/welcome-investments");
 };
 
+investmentsCtrl.renderWizardInvestments = (req, res) => {
+    res.render("investments/wizard-investments");
+};
+
 investmentsCtrl.Recommendations = (req, res) => {
     res.render("investments/recommendations");
 };
