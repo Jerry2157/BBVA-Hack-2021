@@ -53,6 +53,14 @@
         <small>sigue en esta pestaña simulando un flujo de verdad</small>
         <hr>
         <div class="d-lg-flex text-center justify-content-center">
+          
+          {{#if user}}
+          <a href="/users/logout">
+            <button type="button" class="btn btn-outline-light px-3 me-2" data-mdb-ripple-color="dark">
+              Cerrar sesión
+            </button>
+          </a>
+          {{else}}
           <a href="/users/signup">
             <button type="button" class="btn btn-outline-light px-3 me-2" data-mdb-ripple-color="dark">
               Crear cuenta
@@ -63,11 +71,7 @@
               Iniciar sesión
             </button>
           </a>
-          <a href="/users/logout">
-            <button type="button" class="btn btn-outline-light px-3 me-2" data-mdb-ripple-color="dark">
-              Cerrar sesión
-            </button>
-          </a>
+          {{/if}}
         </div>
         <small>Simulador de administración de cuentas</small>
         <br>
