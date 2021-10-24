@@ -139,8 +139,8 @@
             Más
           </button>
           <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <li><a class="dropdown-item" href="#">Crear nueva inversión</a></li>
-            <li><a class="dropdown-item" href="#">Recomendaciones</a></li>
+            <li><a class="dropdown-item" href="/investments/allproducts">Crear nueva inversión</a></li>
+            <li><a class="dropdown-item" href="/investments/recommendations">Recomendaciones</a></li>
             <li><a class="dropdown-item" href="/investments/goals">Metas</a></li>
             <li><a class="dropdown-item" href="/investments/insights">Balance general</a></li>
             <li><a class="dropdown-item" href="#">Contacto</a></li>
@@ -151,9 +151,11 @@
 
       <!-- Right -->
       <div class="d-none d-lg-block">
-        <button type="button" class="btn btn-light bg-light px-3 me-2" data-mdb-ripple-color="dark">
+        <a href="/investments/allproducts" >
+<button type="button" class="btn btn-light bg-light px-3 me-2" data-mdb-ripple-color="dark">
           <i class="fas fa-edit me-2"></i>Crear nueva inversión
         </button>
+</a>
         <button type="button" class="btn btn-light bg-light px-3 me-2" data-mdb-ripple-color="dark">
           <i class="fas fa-phone me-2"></i>Contacto
         </button>
@@ -237,6 +239,10 @@
                 <button type="button" class="btn btn-light bg-light btn-block mb-1" data-mdb-ripple-color="dark" data-mdb-toggle="modal"
   data-mdb-target="#staticBackdrop2">
                   Crear nueva inversión
+                </button>
+                <button type="button" class="btn btn-outline-light btn-block mb-1" data-mdb-ripple-color="dark" data-mdb-toggle="modal"
+  data-mdb-target="#staticBackdrop">
+                  Tutorial de página
                 </button>
               </div>
             </div>

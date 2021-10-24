@@ -46,7 +46,7 @@ usersCtrl.singup = async(req, res) => {
 
 usersCtrl.renderSigninForm = async(req, res) => {
     console.log("aaa")
-    res.render("users/signin", { success_msg: "aaaa" });
+    res.render("users/signin", { success_msg: "Usuario registrado correctamente" });
 };
 
 usersCtrl.signin = passport.authenticate("local", {
