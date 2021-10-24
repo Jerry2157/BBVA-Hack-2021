@@ -4,7 +4,10 @@ const Onboardings = require("../models/Onboardings");
 utils.ShowedOnboarding = async(user_id, onboarding_id) => {
     var query = { user: user_id },
         update = { onboarding_id: true },
-        options = { upsert: false };
+        options = {
+            upsert: false,
+            new: false
+        };
     var isShowed = true;
     switch (onboarding_id) {
         case "onboardingwelcomeshowed":
@@ -28,23 +31,18 @@ utils.ShowedOnboarding = async(user_id, onboarding_id) => {
         default:
             return true;
     }
-    var result = await Onboardings.findOneAndUpdate(query, update, options, async function(error, result) {});
     try {
+        var result = await Onboardings.findOne(query);
         if (result == null) {
             console.log("no hay documento")
             update.user = user_id
             onboardings = new Onboardings(update);
-            onboardings.save(function(error) {
-                if (!error) {
-                    // Do something with the document
-                    isShowed = false;
-                } else {
-                    throw error;
-                }
-            });
+            onboardings.save();
             return false;
+        } else {
+            result_two = await Onboardings.findOneAndUpdate(query, update, options, async function(error, result) {});
+            return result[onboarding_id];
         }
-        return result[onboarding_id];
     } catch (error) {
 
     }

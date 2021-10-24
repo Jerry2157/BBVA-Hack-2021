@@ -15,6 +15,11 @@ const InvestmentSchema = new Schema({
         required: false,
         default: "sin descripción"
     },
+    risk: {
+        type: String,
+        required: false,
+        default: "bajo"
+    },
     type_rent: {
         type: String,
         required: true

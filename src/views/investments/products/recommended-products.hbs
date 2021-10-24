@@ -133,8 +133,8 @@
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                         <li><a class="dropdown-item active" href="#">Crear nueva inversión</a></li>
                         <li><a class="dropdown-item" href="#">Recomendaciones</a></li>
-                        <li><a class="dropdown-item" href="#">Metas</a></li>
-                        <li><a class="dropdown-item" href="#">Balanca general</a></li>
+                        <li><a class="dropdown-item" href="/investments/goals">Metas</a></li>
+                        <li><a class="dropdown-item" href="/investments/insights">Balance general</a></li>
                         <li><a class="dropdown-item" href="#">Contacto</a></li>
                     </ul>
                 </div>
@@ -249,7 +249,6 @@
                                             </div>
                                         </div>
                                     </div>
-
                                 </div>
 
                                 <hr class="mb-1">
@@ -261,6 +260,7 @@
                                 </a>
 
                                 <div class="card shadow-0 border" style="margin-bottom: 2rem;">
+                                    <!--
                                     <div class="card-body border-bottom">
                                         <div class="row">
                                             <div class="col-md-2 col-2 mb-4">
@@ -269,10 +269,62 @@
                                             </div>
                                             <div class="col-md-10 col-10">
                                                 <div class="d-flex justify-content-between pb-1">
-                                                    <h6>Producto 1</h6>
-                                                    <h6>Rendimiento +2.0</h6>
+                                                    <h6>Pagaré</h6>
+                                                    <h6>Rendimiento +1.85</h6>
                                                 </div>
-                                                <p class="text-muted">Descripción de producto 1.</p>
+                                                <p class="text-muted">Con un pagaré inviertes tu dinero y no pierde valor con el tiempo.</p>
+                                            </div>
+                                        </div>
+                                        <div class="d-md-flex justify-content-between align-items-center mb-n1">
+                                            <p class="mb-2 mb-md-0">
+                                                <i class="fas fa-check-circle text-success pe-1"></i>
+                                                <span class="text-muted">Riesgo inexistente</span>
+                                            </p>
+                                            <div>
+                                                <a href="/investments/productinfo/product_one">Más info</a>
+                                                <span class="px-3" style="color: #aaa;">|</span>
+                                                <a href="/investments/productinfo/product_one">Contratar</a>
+                                            </div>
+                                        </div>
+                                    </div>-->
+                                    <div class="card-body border-bottom">
+                                        <div class="row">
+                                            <div class="col-md-2 col-2 mb-4">
+                                                <img src="https://mdbootstrap.com/img/Photos/new-templates/img100.jpg"
+                                                    class="img-fluid rounded-5">
+                                            </div>
+                                            <div class="col-md-10 col-10">
+                                                <div class="d-flex justify-content-between pb-1">
+                                                    <h6>Cedes</h6>
+                                                    <h6>Rendimiento +2.04</h6>
+                                                </div>
+                                                <p class="text-muted">Los Certificados de Depósito o Cedes son una inversión a plazo en moneda nacional.</p>
+                                            </div>
+                                        </div>
+                                        <div class="d-md-flex justify-content-between align-items-center mb-n1">
+                                            <p class="mb-2 mb-md-0">
+                                                <i class="fas fa-check-circle text-success pe-1"></i>
+                                                <span class="text-muted">Riesgo inexistente</span>
+                                            </p>
+                                            <div>
+                                                <a href="/investments/productinfo/product_two">Más info</a>
+                                                <span class="px-3" style="color: #aaa;">|</span>
+                                                <a href="/investments/productinfo/product_two">Contratar</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-body border-bottom">
+                                        <div class="row">
+                                            <div class="col-md-2 col-2 mb-4">
+                                                <img src="https://mdbootstrap.com/img/Photos/new-templates/img100.jpg"
+                                                    class="img-fluid rounded-5">
+                                            </div>
+                                            <div class="col-md-10 col-10">
+                                                <div class="d-flex justify-content-between pb-1">
+                                                    <h6>Fondo Líquido en Pesos</h6>
+                                                    <h6>Rendimiento aprox. 3.08</h6>
+                                                </div>
+                                                <p class="text-muted">Estrategia de corto plazo que invierte en instrumentos de deuda.</p>
                                             </div>
                                         </div>
                                         <div class="d-md-flex justify-content-between align-items-center mb-n1">
@@ -281,9 +333,9 @@
                                                 <span class="text-muted">Riesgo bajo</span>
                                             </p>
                                             <div>
-                                                <a href="#!">Más info</a>
+                                                <a href="/investments/productinfo/product_three">Más info</a>
                                                 <span class="px-3" style="color: #aaa;">|</span>
-                                                <a href="#!">Contratar</a>
+                                                <a href="/investments/productinfo/product_three">Contratar</a>
                                             </div>
                                         </div>
                                     </div>
@@ -295,10 +347,10 @@
                                             </div>
                                             <div class="col-md-10 col-10">
                                                 <div class="d-flex justify-content-between pb-1">
-                                                    <h6>Fondo BBVA DdLP</h6>
-                                                    <h6>Rendimiento +6.0</h6>
+                                                    <h6>Fondo Acciones México</h6>
+                                                    <h6>Rendimiento variable</h6>
                                                 </div>
-                                                <p class="text-muted">Fondo de inversión a largo plazo.</p>
+                                                <p class="text-muted">Estrategia de largo plazo que invierte en acciones de empresas nacionales.</p>
                                             </div>
                                         </div>
                                         <div class="d-md-flex justify-content-between align-items-center mb-n1">
@@ -307,12 +359,13 @@
                                                 <span class="text-muted">Riesgo medio</span>
                                             </p>
                                             <div>
-                                                <a href="#!">Más info</a>
+                                                <a href="/investments/productinfo/product_four">Más info</a>
                                                 <span class="px-3" style="color: #aaa;">|</span>
-                                                <a href="#!">Contratar</a>
+                                                <a href="/investments/productinfo/product_four">Contratar</a>
                                             </div>
                                         </div>
                                     </div>
+                                    <!--
                                     <div class="card-body border-bottom">
                                         <div class="row">
                                             <div class="col-md-2 col-2 mb-4">
@@ -321,10 +374,12 @@
                                             </div>
                                             <div class="col-md-10 col-10">
                                                 <div class="d-flex justify-content-between pb-1">
-                                                    <h6>Fondo Peligroso</h6>
-                                                    <h6>Rendimiento +8.0</h6>
+                                                    <h6>Fondo de Inversión Sostenible</h6>
+                                                    <h6>Rendimiento variable</h6>
                                                 </div>
-                                                <p class="text-muted">Fondo de inversión a largo plazo.</p>
+                                                <p class="text-muted">El Fondo busca principalmente la inversión en instrumentos de renta variable internacional que consideren alguno
+de los criterios de inversión sostenibles; compañías con una elevada calificación medioambiental, social y de
+gobierno corporativo.</p>
                                             </div>
                                         </div>
                                         <div class="d-md-flex justify-content-between align-items-center mb-n1">
@@ -333,12 +388,41 @@
                                                 <span class="text-muted">Riesgo Alto</span>
                                             </p>
                                             <div>
-                                                <a href="#!">Más info</a>
+                                                <a href="/investments/productinfo/product_five">Más info</a>
                                                 <span class="px-3" style="color: #aaa;">|</span>
-                                                <a href="#!">Contratar</a>
+                                                <a href="/investments/productinfo/product_five">Contratar</a>
                                             </div>
                                         </div>
                                     </div>
+                                    -->
+                                    <!--
+                                    <div class="card-body border-bottom">
+                                        <div class="row">
+                                            <div class="col-md-2 col-2 mb-4">
+                                                <img src="https://mdbootstrap.com/img/Photos/new-templates/img100.jpg"
+                                                    class="img-fluid rounded-5">
+                                            </div>
+                                            <div class="col-md-10 col-10">
+                                                <div class="d-flex justify-content-between pb-1">
+                                                    <h6>Portafolio Multiestrategia Moderado</h6>
+                                                    <h6>Rendimiento variable</h6>
+                                                </div>
+                                                <p class="text-muted">Estrategia de largo plazo moderada que invierte a través de un proceso inversor disciplinado que enfatiza en la preservación de
+capital, la consistencia de resultados y un rendimiento positivo desafiando las condiciones del mercado.</p>
+                                            </div>
+                                        </div>
+                                        <div class="d-md-flex justify-content-between align-items-center mb-n1">
+                                            <p class="mb-2 mb-md-0">
+                                                <i class="fas fa-check-circle text-danger pe-1"></i>
+                                                <span class="text-muted">Riesgo Alto</span>
+                                            </p>
+                                            <div>
+                                                <a href="/investments/productinfo/product_six">Más info</a>
+                                                <span class="px-3" style="color: #aaa;">|</span>
+                                                <a href="/investments/productinfo/product_six">Contratar</a>
+                                            </div>
+                                        </div>
+                                    </div>-->
                                 </div>
                                 <!--
                 <div class="d-lg-flex text-center justify-content-center">

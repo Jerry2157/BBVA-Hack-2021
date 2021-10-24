@@ -8,11 +8,12 @@ const {
     renderInvestments,
     renderEditForm,
     updateNote,
-    deleteNote,
+    deleteInvestment,
     renderWelcomeInvestments,
     Recommendations,
     AllProducts,
     RecommendedProducts,
+    RecommendedProductsProcessing,
     renderWizardInvestments,
     productOne,
     contractProductOne,
@@ -20,7 +21,14 @@ const {
     contractProductTwo,
     productThree,
     contractProductThree,
-    landingNewInvestment
+    productFour,
+    contractProductFour,
+    productFive,
+    contractProductFive,
+    productSix,
+    contractProductSix,
+    landingNewInvestment,
+    renderInsights
 } = require("../controllers/investments.controller");
 
 // Helpers
@@ -49,13 +57,19 @@ router.get("/investments/allproducts", isAuthenticated, AllProducts);
 // Get Recommended Products Investements
 router.get("/investments/recommendedproducts", isAuthenticated, RecommendedProducts);
 
+// Get Recommended Products Investements
+router.get("/investments/wizard-investments/processing", isAuthenticated, RecommendedProductsProcessing);
+
+// Get Recommended Products Investements
+router.get("/investments/insights", isAuthenticated, renderInsights);
+
 // Edit Investment
 router.get("/investments/edit/:id", isAuthenticated, renderEditForm);
 
 router.put("/investments/edit-note/:id", isAuthenticated, updateNote);
 
 // Delete Investment
-router.delete("/investments/delete/:id", isAuthenticated, deleteNote);
+router.get("/investments/delete/:id", isAuthenticated, deleteInvestment);
 
 
 router.get("/investments/landing-new-investment", isAuthenticated, landingNewInvestment);
@@ -69,6 +83,15 @@ router.post("/investments/productinfo/product_two", isAuthenticated, contractPro
 
 router.get("/investments/productinfo/product_three", isAuthenticated, productThree);
 router.post("/investments/productinfo/product_three", isAuthenticated, contractProductThree);
+
+router.get("/investments/productinfo/product_four", isAuthenticated, productFour);
+router.post("/investments/productinfo/product_four", isAuthenticated, contractProductFour);
+
+router.get("/investments/productinfo/product_five", isAuthenticated, productFive);
+router.post("/investments/productinfo/product_five", isAuthenticated, contractProductFive);
+
+router.get("/investments/productinfo/product_six", isAuthenticated, productSix);
+router.post("/investments/productinfo/product_six", isAuthenticated, contractProductSix);
 
 
 module.exports = router;

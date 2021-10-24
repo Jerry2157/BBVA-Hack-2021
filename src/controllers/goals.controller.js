@@ -8,26 +8,39 @@ goalsCtrl.renderGoalForm = (req, res) => {
 };
 
 goalsCtrl.createNewGoal = async(req, res) => {
-    const { title, description } = req.body;
+    console.log("req.body ", req.body);
+    const { title, description, price, finish_date } = req.body;
     const errors = [];
     if (!title) {
-        errors.push({ text: "Please Write a Title." });
+        errors.push({ text: "Por favor escribe título" });
     }
     if (!description) {
-        errors.push({ text: "Please Write a Description" });
+        errors.push({ text: "Por favor escribe descripción" });
+    }
+    if (!price) {
+        errors.push({ text: "Por favor escribe precio" });
+    }
+    if (!finish_date) {
+        errors.push({ text: "Por favor escribe fecha" });
     }
     if (errors.length > 0) {
-        res.render("goals/new-goal", {
+        res.render("goals/all-goals", {
             errors,
             title,
             description,
         });
     } else {
-        const newGoal = new Goal({ title, description });
-        newGoal.user = req.user.id;
+        const newGoal = new Goal({
+            title: title,
+            description: description,
+            price: price,
+            finish_date: Date.now(),
+            accomplished: false,
+            user: req.user.id
+        });
         await newGoal.save();
-        req.flash("success_msg", "Goal Added Successfully");
-        res.redirect("/goals");
+        req.flash("success_msg", "Meta agregada correctamente");
+        res.redirect("/investments/goals");
     }
 };
 
@@ -35,6 +48,7 @@ goalsCtrl.renderGoals = async(req, res) => {
     const goals = await Goal.find({ user: req.user.id })
         .sort({ date: "desc" })
         .lean();
+    console.log("goals: ", goals)
     res.render("goals/all-goals", { goals });
 };
 

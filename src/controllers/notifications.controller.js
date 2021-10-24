@@ -35,6 +35,7 @@ notificationsCtrl.renderNotifications = async(req, res) => {
     const notifications = await Notification.find({ user: req.user.id })
         .sort({ date: "desc" })
         .lean();
+    console.log("notifications: ", notifications)
     res.render("notifications/all-notifications", { notifications });
 };
 

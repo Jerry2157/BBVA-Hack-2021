@@ -7,8 +7,13 @@ const { ShowedOnboarding } = require("../helpers/onboardings");
 const Note = require("../models/Note");
 const Investment = require("../models/Investment");
 
-investmentsCtrl.renderWelcomeInvestments = (req, res) => {
-    res.render("investments/welcome-investments");
+investmentsCtrl.renderWelcomeInvestments = async(req, res) => {
+    var isShowedOnboarding = await ShowedOnboarding(req.user.id, "onboardingwelcomeshowed");
+    if (isShowedOnboarding) {
+        res.redirect("/investments")
+    } else {
+        res.render("investments/welcome-investments");
+    }
 };
 
 investmentsCtrl.renderWizardInvestments = (req, res) => {
@@ -19,12 +24,20 @@ investmentsCtrl.Recommendations = (req, res) => {
     res.render("investments/recommendations");
 };
 
+investmentsCtrl.renderInsights = (req, res) => {
+    res.render("investments/insights");
+};
+
 investmentsCtrl.AllProducts = (req, res) => {
     res.render("investments/products/all-products");
 };
 
 investmentsCtrl.RecommendedProducts = (req, res) => {
     res.render("investments/products/recommended-products");
+};
+
+investmentsCtrl.RecommendedProductsProcessing = (req, res) => {
+    res.render("investments/wizard-investments-loading");
 };
 
 investmentsCtrl.renderNoteForm = (req, res) => {
@@ -88,10 +101,10 @@ investmentsCtrl.updateNote = async(req, res) => {
     res.redirect("/notes");
 };
 
-investmentsCtrl.deleteNote = async(req, res) => {
-    await Note.findByIdAndDelete(req.params.id);
-    req.flash("success_msg", "Note Deleted Successfully");
-    res.redirect("/notes");
+investmentsCtrl.deleteInvestment = async(req, res) => {
+    await Investment.findByIdAndUpdate(req.params.id, { active: false });
+    req.flash("success_msg", "Investment Suspended Successfully");
+    res.redirect("/investments");
 };
 
 
@@ -120,7 +133,7 @@ investmentsCtrl.contractProductOne = async(req, res) => {
         });
     } else {
         try {
-            await createContract(0, "Producto de inversión 1", "Descripción de producto de inversión.", "fixed", 2.0, plazo, user_id)
+            await createContract(0, "Producto de inversión Pagaré", "Con un pagaré inviertes tu dinero y no pierde valor con el tiempo.", "fixed", 1.85, monto, plazo, user_id)
             req.flash("success_msg", "Inversión creada correctamente");
             res.redirect("/investments/landing-new-investment");
         } catch (error) {
@@ -131,21 +144,187 @@ investmentsCtrl.contractProductOne = async(req, res) => {
     //res.render("investments/products/contracts/product_one");
 };
 
+
 investmentsCtrl.productTwo = (req, res) => {
     res.render("investments/products/contracts/product_two");
 };
-investmentsCtrl.contractProductTwo = (req, res) => {
-    res.render("investments/products/contracts/product_two");
+investmentsCtrl.contractProductTwo = async(req, res) => {
+    const { monto, plazo } = req.body;
+    const user_id = req.user.id;
+    const errors = [];
+    if (!monto) {
+        errors.push({ text: "Por favor agrega un monto." });
+    }
+    if (!plazo) {
+        errors.push({ text: "Por favor especifica un plazo." });
+    }
+    if (!user_id) {
+        errors.push({ text: "Error en la sesión." });
+    }
+    if (errors.length > 0) {
+        res.render("investments/products/contracts/product_two", {
+            errors,
+            title,
+            description,
+        });
+    } else {
+        try {
+            await createContract(1, "Producto de inversión Cedes", "Los Certificados de Depósito o Cedes son una inversión a plazo en moneda nacional.", "fixed", 2.04, monto, plazo, user_id)
+            req.flash("success_msg", "Inversión creada correctamente");
+            res.redirect("/investments/landing-new-investment");
+        } catch (error) {
+            req.flash("error_msg", "No se pudo crear la inversión, contacta a BBVA. ERROR_CODE: 01");
+            res.redirect("/investments");
+        }
+    }
+    //res.render("investments/products/contracts/product_two");
 };
+
 
 investmentsCtrl.productThree = (req, res) => {
     res.render("investments/products/contracts/product_three");
 };
-investmentsCtrl.contractProductThree = (req, res) => {
-    res.render("investments/products/contracts/product_three");
+investmentsCtrl.contractProductThree = async(req, res) => {
+    const { monto, plazo } = req.body;
+    const user_id = req.user.id;
+    const errors = [];
+    if (!monto) {
+        errors.push({ text: "Por favor agrega un monto." });
+    }
+    if (!plazo) {
+        errors.push({ text: "Por favor especifica un plazo." });
+    }
+    if (!user_id) {
+        errors.push({ text: "Error en la sesión." });
+    }
+    if (errors.length > 0) {
+        res.render("investments/products/contracts/product_three", {
+            errors,
+            title,
+            description,
+        });
+    } else {
+        try {
+            await createContract(2, "Producto de inversión Fondo Líquido en Pesos", "Estrategia de corto plazo que invierte en instrumentos de deuda.", "fixed", 3.08, monto, plazo, user_id)
+            req.flash("success_msg", "Inversión creada correctamente");
+            res.redirect("/investments/landing-new-investment");
+        } catch (error) {
+            req.flash("error_msg", "No se pudo crear la inversión, contacta a BBVA. ERROR_CODE: 01");
+            res.redirect("/investments");
+        }
+    }
+    //res.render("investments/products/contracts/product_three");
 };
 
-async function createContract(idCatalogInvestment, title, description, type_rent, interest, periodicity, user) {
+
+investmentsCtrl.productFour = (req, res) => {
+    res.render("investments/products/contracts/product_four");
+};
+investmentsCtrl.contractProductFour = async(req, res) => {
+    const { monto, plazo } = req.body;
+    const user_id = req.user.id;
+    const errors = [];
+    if (!monto) {
+        errors.push({ text: "Por favor agrega un monto." });
+    }
+    if (!plazo) {
+        errors.push({ text: "Por favor especifica un plazo." });
+    }
+    if (!user_id) {
+        errors.push({ text: "Error en la sesión." });
+    }
+    if (errors.length > 0) {
+        res.render("investments/products/contracts/product_four", {
+            errors,
+            title,
+            description,
+        });
+    } else {
+        try {
+            await createContract(2, "Producto de inversión Fondo Acciones México", "Estrategia de largo plazo que invierte en acciones de empresas nacionales.", "variable", 10.00, monto, plazo, user_id)
+            req.flash("success_msg", "Inversión creada correctamente");
+            res.redirect("/investments/landing-new-investment");
+        } catch (error) {
+            req.flash("error_msg", "No se pudo crear la inversión, contacta a BBVA. ERROR_CODE: 01");
+            res.redirect("/investments");
+        }
+    }
+    //res.render("investments/products/contracts/product_four");
+};
+
+
+investmentsCtrl.productFive = (req, res) => {
+    res.render("investments/products/contracts/product_five");
+};
+investmentsCtrl.contractProductFive = async(req, res) => {
+    const { monto, plazo } = req.body;
+    const user_id = req.user.id;
+    const errors = [];
+    if (!monto) {
+        errors.push({ text: "Por favor agrega un monto." });
+    }
+    if (!plazo) {
+        errors.push({ text: "Por favor especifica un plazo." });
+    }
+    if (!user_id) {
+        errors.push({ text: "Error en la sesión." });
+    }
+    if (errors.length > 0) {
+        res.render("investments/products/contracts/product_five", {
+            errors,
+            title,
+            description,
+        });
+    } else {
+        try {
+            await createContract(2, "Producto de inversión Fondo de Inversión Sostenible", "El Fondo busca principalmente la inversión en instrumentos de renta variable internacional que consideren alguno de los criterios de inversión sostenibles; compañías con una elevada calificación medioambiental, social y de gobierno corporativo.", "variable", 10.00, monto, plazo, user_id)
+            req.flash("success_msg", "Inversión creada correctamente");
+            res.redirect("/investments/landing-new-investment");
+        } catch (error) {
+            req.flash("error_msg", "No se pudo crear la inversión, contacta a BBVA. ERROR_CODE: 01");
+            res.redirect("/investments");
+        }
+    }
+    //res.render("investments/products/contracts/product_five");
+};
+
+
+investmentsCtrl.productSix = (req, res) => {
+    res.render("investments/products/contracts/product_six");
+};
+investmentsCtrl.contractProductSix = async(req, res) => {
+    const { monto, plazo } = req.body;
+    const user_id = req.user.id;
+    const errors = [];
+    if (!monto) {
+        errors.push({ text: "Por favor agrega un monto." });
+    }
+    if (!plazo) {
+        errors.push({ text: "Por favor especifica un plazo." });
+    }
+    if (!user_id) {
+        errors.push({ text: "Error en la sesión." });
+    }
+    if (errors.length > 0) {
+        res.render("investments/products/contracts/product_six", {
+            errors,
+            title,
+            description,
+        });
+    } else {
+        try {
+            await createContract(2, "Producto de inversión Portafolio Multiestrategia Moderado", "Estrategia de largo plazo moderada que invierte a través de un proceso inversor disciplinado que enfatiza en la preservación de capital, la consistencia de resultados y un rendimiento positivo desafiando las condiciones del mercado.", "variable", 10.00, monto, plazo, user_id)
+            req.flash("success_msg", "Inversión creada correctamente");
+            res.redirect("/investments/landing-new-investment");
+        } catch (error) {
+            req.flash("error_msg", "No se pudo crear la inversión, contacta a BBVA. ERROR_CODE: 01");
+            res.redirect("/investments");
+        }
+    }
+    //res.render("investments/products/contracts/product_six");
+};
+
+async function createContract(idCatalogInvestment, title, description, type_rent, interest, monto, periodicity, user) {
     //todo get actual balance
     var init_balance = 0;
     let now = new Date();
@@ -156,8 +335,8 @@ async function createContract(idCatalogInvestment, title, description, type_rent
             title: title,
             description: description,
             type_rent: type_rent,
-            init_balance: init_balance,
-            investment_balance: 0,
+            init_balance: monto,
+            investment_balance: monto,
             interest: interest,
             periodicity: periodicity,
             init_date: now,
