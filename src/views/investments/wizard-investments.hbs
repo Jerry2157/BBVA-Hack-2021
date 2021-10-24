@@ -215,13 +215,44 @@
                                                 </select>
                                                 <hr class="mb-1">
 
-                                                <p class="mb-1">¿Cuál es el objetivo de tus invertir?</p>
+                                                <p class="mb-1">¿Plazo que podrías no utilizar tu dinero?</p>
                                                 <select class="select">
-                                                    <option value="1">Tener un fondo de emergencias</option>
-                                                    <option value="2">Two</option>
-                                                    <option value="3">Three</option>
-                                                    <option value="4">Four</option>
-                                                    <option value="5">Five</option>
+                                                    <option value="1">menos de 1 año</option>
+                                                    <option value="2">menos de 3 años</option>
+                                                    <option value="3">menos de 6 años</option>
+                                                </select>
+                                                <hr class="mb-1">
+
+                                                <p class="mb-1">¿Con qué monto <strong>podrías</strong> iniciar?</p>
+                                                <div class="form-outline">
+                                                    <input type="number" id="typeNumber" class="form-control" />
+                                                    <label class="form-label" for="typeNumber">MXN</label>
+                                                </div>
+                                                <hr class="mb-1">
+
+                                                <p class="mb-1">¿Cuánto <strong>podrías</strong> aportar a tu inversión mensualmente?</p>
+                                                <div class="form-outline">
+                                                    <input type="number" id="typeNumber" class="form-control" />
+                                                    <label class="form-label" for="typeNumber">MXN</label>
+                                                </div>
+                                                <hr class="mb-1">
+
+                                                <p class="mb-1">¿Cómo definirías tus ingresos?</p>
+                                                <select class="select">
+                                                    <option value="1">Muy irregulares</option>
+                                                    <option value="2">Irregulares</option>
+                                                    <option value="3">Estables</option>
+                                                    <option value="4">Muy estables</option>
+                                                </select>
+                                                <hr class="mb-1">
+
+                                                <p class="mb-1">¿Cuántos <a href="#" data-mdb-toggle="tooltip" title="Ejemplos: espos@ hij@s, familia">dependientes económicos</a> tienes?</p>
+                                                <select class="select">
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                    <option value="5">5</option>
                                                 </select>
                                                 <hr class="mb-1">
                                             </div>
@@ -232,10 +263,25 @@
                                                 <span class="stepper-head-text"> Paso 2: Ingresos </span>
                                             </div>
                                             <div class="stepper-content py-3">
-                                                <span>Lorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a
-                                                    pellentesque
-                                                    dui, non felis. Maecenas malesuada elit lectus felis, malesuada
-                                                    ultricies.</span>
+                                                <p class="mb-1">¿Qué tanto conoces sobre inversiones?</p>
+                                                <select class="select">
+                                                    <option value="1">Desconozco</option>
+                                                    <option value="2">Muy poco</option>
+                                                    <option value="3">Entiendo muy bien</option>
+                                                    <option value="4">Soy experto</option>
+                                                </select>
+                                                <hr class="mb-1">
+
+                                                <p class="mb-1">¿En cuál de estos instrumentos has invertido?</p>
+                                                <select class="select">
+                                                    <option value="0">Ninguno</option>
+                                                    <option value="1">Fondos de inversión</option>
+                                                    <option value="2">ETFs</option>
+                                                    <option value="3">Acciones</option>
+                                                    <option value="4">Bonos</option>
+                                                    <option value="5">CETES</option>
+                                                </select>
+                                                <hr class="mb-1">
                                             </div>
                                         </li>
                                         <li class="stepper-step">
@@ -244,10 +290,58 @@
                                                 <span class="stepper-head-text"> Paso 3: Gastos </span>
                                             </div>
                                             <div class="stepper-content py-3">
-                                                <span>Lorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a
-                                                    pellentesque
-                                                    dui, non felis. Maecenas malesuada elit lectus felis, malesuada
-                                                    ultricies.</span>
+                                                <p class="mb-1">Cuando escuchas la palabra 'riesgo', ¿En qué pìensas?</p>
+                                                <select class="select">
+                                                    <option value="0">Peligro</option>
+                                                    <option value="1">Incertidumbre</option>
+                                                    <option value="2">Oportunidad</option>
+                                                    <option value="3">Emoción</option>
+                                                </select>
+                                                <hr class="mb-1">
+
+                                                <p class="mb-1">Al tomar decisiones de inversión, ¿en qué te enfocas?</p>
+                                                <select class="select">
+                                                    <option value="0">Siempre en las pérdidas</option>
+                                                    <option value="1">En las posibles pérdidas</option>
+                                                    <option value="2">En las posibles ganancias</option>
+                                                    <option value="3">Siempre en las ganancias</option>
+                                                </select>
+                                                <hr class="mb-1">
+
+                                                <p class="mb-1">En temas financieros, ¿qué tan fácil te adaptas cuando algo sale mal?</p>
+                                                <select class="select">
+                                                    <option value="0">Me es muy difícil</option>
+                                                    <option value="1">Me es algo dificil</option>
+                                                    <option value="2">Me es algo facil</option>
+                                                    <option value="3">Me es muy fácil</option>
+                                                </select>
+                                                <hr class="mb-1">
+
+                                                <p class="mb-1">¿Cuál es tu prioridad al invertir?</p>
+                                                <select class="select">
+                                                    <option value="0">Minimizar mis pérdidas</option>
+                                                    <option value="1">Balance entre mis pérdidas y ganancias</option>
+                                                    <option value="2">Maximizar mis ganancias</option>
+                                                </select>
+                                                <hr class="mb-1">
+
+                                                <p class="mb-1">¿Con qué rango de pérdida-ganancia te sentirías cómodo?</p>
+                                                <select class="select">
+                                                    <option value="0">3%/8%</option>
+                                                    <option value="1">-5%/18%</option>
+                                                    <option value="2">-12%/27%</option>
+                                                    <option value="3">-20%/35%</option>
+                                                </select>
+                                                <hr class="mb-1">
+
+                                                <p class="mb-1">¿Qué harías si tu inversión perdiera más del 20% de su valor en 3 meses?</p>
+                                                <select class="select">
+                                                    <option value="0">Vendo toda mi inversión</option>
+                                                    <option value="1">Vendo una parte de mi inversión</option>
+                                                    <option value="2">Mantengo mi inversión, no hago nada</option>
+                                                    <option value="3">Aumento mi inversión</option>
+                                                </select>
+                                                <hr class="mb-1">
                                             </div>
                                         </li>
                                         <li class="stepper-step">
@@ -257,12 +351,12 @@
                                             </div>
                                             <div class="stepper-content py-3">
                                                 <!-- Checkbox -->
-                                                <img src="https://mdbootstrap.com/img/new/slides/041.jpg" class="img-fluid" alt="..." />
+                                                <img src="https://1000marcas.net/wp-content/uploads/2020/11/Oracle-logo.png" class="img-fluid" alt="..." />
                                                 <div class="form-check d-flex justify-content-center mb-4">
                                                     <input class="form-check-input me-2" type="checkbox" value=""
                                                         id="form5Example3" checked />
                                                     <label class="form-check-label" for="form5Example3">
-                                                        Compartir mis datos de forma anónima con Oracle para una mejor experiencia.
+                                                        Compartir mis datos de forma <a href="#" data-mdb-toggle="tooltip" title="no envíamos información que te ubique como individuo">anónima</a> con Oracle para una mejor recomendación.
                                                     </label>
                                                 </div>
                                             </div>
@@ -274,8 +368,10 @@
                                             </div>
                                             <div class="stepper-content py-3">
                                                 <div class="col-12 text-center">
-                                                    <button type="submit" class="btn btn-primary">Enviar
+                                                    <a href="/investments/wizard-investments/processing">
+                                                    <button type="button" class="btn btn-primary">Enviar
                                                         respuestas</button>
+                                                        </a>
                                                 </div>
                                             </div>
                                         </li>

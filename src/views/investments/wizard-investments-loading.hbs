@@ -1,0 +1,269 @@
+<!--<div class="row">
+  {{#each notes}}
+  <div class="col-md-3">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title d-flex justify-content-between align-items-center">
+          {{ title }} <a href="/notes/edit/{{_id}}"><i class="fas fa-edit"></i></a>
+        </h4>
+        <p>{{ description }} </p>
+
+        <form action="/notes/delete/{{_id}}?_method=DELETE" method="POST">
+          <input type="hidden" name="_method" value="DELETE">
+          <button type="submit" class="btn btn-danger btn-block btn-sm">Delete</button>
+        </form>
+
+      </div>
+    </div>
+  </div>
+  {{else}}
+  <div class="card mx-auto">
+    <div class="card-body">
+      <h1>Hello {{user.name}}</h1>
+      <p clsss="lead">There are not Notes yet.</p>
+      <a href="/notes/add" class="btn btn-success btn-block">Create One!</a>
+    </div>
+  </div>
+  {{/each}}
+</div>
+-->
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" style="top: 58px;">
+    <div class="container-fluid">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/investments">Regresar</a></li>
+            </ol>
+        </nav>
+    </div>
+</nav>
+<div style="min-height: 30px;"></div>
+
+<section class=" onboarding" data-mdb-start-trigger="#global-backdrop-trigger" data-mdb-start-event="click"
+    data-mdb-backdrop="true" data-mdb-backdrop-opacity="0.5">
+
+    <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop" data-mdb-backdrop="static" data-mdb-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Página inversiones</h5>
+                    <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Aquí va un texto de bienvenida a la página de inversiones. recuerda poner texto con base en
+                    Behaviour
+                    economics.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" data-mdb-dismiss="modal" id="global-backdrop-trigger">
+                        Comenzar tutorial
+                    </button>
+                    <!--<button type="button" class="btn btn-primary">Understood</button>-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Button trigger script -->
+    <script>
+        function LoadInLineScripts() {
+            const myModalEl = document.getElementById('staticBackdrop')
+            const modal = new mdb.Modal(myModalEl)
+            //modal.show()
+        }
+    </script>
+    <!-- END Modal -->
+
+    <div class="container" id="init_banner">
+        <!-- Section: Banner Image -->
+        <section class="mb-4" style="margin-bottom: 2.0rem!important;">
+            <div class="bg-image rounded-bottom shadow-1-strong" style="
+              background-image: url('https://mdbootstrap.com/img/new/slides/297.jpg');
+              height: 60px;
+            "></div>
+
+            <div class="d-flex justify-content-center">
+                <img src="https://mdbootstrap.com/img/new/avatars/18.jpg"
+                    class="rounded-circle shadow-3-strong position-absolute" alt=""
+                    style="width: 70px; margin-top: -42px" />
+            </div>
+        </section>
+        <!-- Section: End Banner Image-->
+
+        <!-- Section: User data -->
+        <section class="text-center">
+            <div class="row d-flex justify-content-center">
+                <h2 style="margin-bottom: 0rem;"><strong>Asistente de inversiones</strong></h2>
+                <div class="col-lg-6">
+                </div>
+            </div>
+        </section>
+        <!-- Section: User data -->
+
+    </div>
+
+    <hr style="margin: 0.5rem 0 !important;">
+
+    <!-- Section: Grey background -->
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5 mb-2 mb-md-0">
+                    <!-- Section: Intro -->
+                    <section class="mb-1 d-none d-lg-block">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title mt-1"><strong>Instrucciones</strong></h5>
+
+                                <ul class="list-unstyled text-muted" style="margin-bottom: 0.5rem;">
+                                    <li><i class="fas fa-globe fa-fw me-3 mb-1"></i>Llena por favor el siguiente
+                                        formulario para darte recomendaciones, lo
+                                        combinaremos con los datos personales que ya sabemos de ti.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- Section: Intro -->
+                </div>
+
+                <div class="col-md-7 mb-2 mb-md-0">
+                    <!-- Section: Inversiones -->
+                    <section class="mb-1">
+                        <div class="card">
+                            <div class="card-body">
+
+                                <div class="d-lg-none" style="margin-bottom: 0.5rem;">
+                                    <p>Llena por favor el siguiente formulario para darte recomendaciones, lo
+                                        combinaremos con los datos personales que ya sabemos de ti.</p>
+                                </div>
+
+                                <!-- Stepper 1 -->
+                                <!--
+                <ul class="stepper" data-mdb-stepper="stepper" data-mdb-stepper-type="mobile">
+                  <li class="stepper-step stepper-active bg-dark">
+                    <div class="stepper-head">
+                      <span class="stepper-head-icon"> 1 </span>
+                      <span class="stepper-head-text"> paso1 </span>
+                    </div>
+                    <div class="stepper-content py-3">
+                      <p>Tu dinero al tenerlo guardado en físico o en tu cuenta bancaria pierde valor con el tiempo
+                        debido a la inflación o devaluación frente al dólar. Por ejemplo si en enero con 100 pesos
+                        comprabas 100 chicles lo más seguro es que al final del año por los mismos 100 pesos ahora solo
+                        puedas comprar 95 chicles.
+                        Hay una forma de resolverlo y se llama inversión.</p>
+                      <div class="ratio ratio-16x9">
+                        <iframe src="https://www.youtube.com/embed/vlDzYIIOYmM" title="YouTube video"
+                          allowfullscreen></iframe>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="stepper-step">
+                    <div class="stepper-head">
+                      <span class="stepper-head-icon"> 2 </span>
+                      <span class="stepper-head-text"> step2 </span>
+                    </div>
+                    <div class="stepper-content py-3">
+                      <p>Invertir con BBVA es rápido, muy sencillo y en la mayoría de los casos no tiene algún costo, en
+                        5
+                        minutos aproximadamente tendrás tu primera inversión, nosotros te llevamos de la mano.</p>
+                      <img src="https://mdbootstrap.com/img/new/standard/city/047.jpg" class="img-fluid rounded"
+                        alt="" />
+                    </div>
+                  </li>
+                  <li class="stepper-step">
+                    <div class="stepper-head">
+                      <span class="stepper-head-icon"> 3 </span>
+                      <span class="stepper-head-text"> step3 </span>
+                    </div>
+                    <div class="stepper-content py-3">
+                      <p>Empieza a invertir con BBVA en un dos por tres y empieza generar dinero desde el primer día.
+                      </p>
+                      <a href="/investments">
+                        <button type="button" class="btn btn-success mb-4" data-mdb-ripple-color="dark">Empezar a
+                          invertir</button>
+                      </a>
+                      <a href="/">
+                        <button type="button" class="btn btn-warning mb-4" data-mdb-ripple-color="dark">Después, volver
+                          al
+                          menú principal</button>
+                      </a>
+                      <div class="d-lg-flex text-center justify-content-center">
+                        <lottie-player src="https://assets3.lottiefiles.com/private_files/lf30_aXRkcv.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop  autoplay></lottie-player>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+                -->
+                                <!-- END Stepper 1 -->
+                                <p>Cargando recomendaciones...</p>
+                                <div class="spinner-border text-info" role="status">
+                                    <span class="visually-hidden">Loading...</span>
+                                </div>
+                                <script>
+                                    function resolveAfter2Seconds() {
+                                        return new Promise(resolve => {
+                                            setTimeout(() => {
+                                            window.location.href = '/investments/recommendedproducts'
+                                            }, 2500);
+                                        });
+                                    }
+                                    resolveAfter2Seconds()
+                                </script>
+
+
+                            </div>
+                    </section>
+                    <!-- Section: Inversiones -->
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="text-center border-bottom">
+        <div class="row d-flex justify-content-center">
+            <div class="col-lg-6">
+                <a href="#init_banner" data-mdb-smooth-scroll="smooth-scroll">
+                    <i class="fas fa-chevron-up me-2"></i>
+                    <h3><strong>Subir</strong></h3>
+                </a>
+                <div>
+                </div>
+                <br>
+            </div>
+        </div>
+    </section>
+    <div class="container" style="min-height: 250px;"></div>
+    <br>
+    <br>
+</section>
+<!-- Section: Grey background -->
+<style>
+    .bg-light {
+        background-color: #004680 !important;
+    }
+
+    .btn-light {
+        color: #ffffff;
+        background-color: #fbfbfb;
+    }
+
+    .stepper {
+        min-height: 65vh;
+    }
+
+    .stepper-vertical .stepper-head {
+        padding: 1.5rem 0.5rem;
+    }
+
+    .stepper-vertical .stepper-step:not(:last-child):after {
+        left: 1.25rem;
+    }
+
+    .stepper-vertical .stepper-content {
+        padding: 0 1.5rem 1.5rem 1.75rem;
+    }
+
+    .select-input.focused~.select-label {
+        color: #ffffff !important;
+    }
+</style>
