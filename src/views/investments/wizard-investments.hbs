@@ -117,8 +117,8 @@
                                 <h5 class="card-title mt-1"><strong>Instrucciones</strong></h5>
 
                                 <ul class="list-unstyled text-muted" style="margin-bottom: 0.5rem;">
-                                    <li><i class="fas fa-globe fa-fw me-3 mb-1"></i>Llena por favor el siguiente
-                                        formulario para darte recomendaciones.</li>
+                                    <li><i class="fas fa-globe fa-fw me-3 mb-1"></i>Llena por favor el siguiente formulario para darte recomendaciones, lo
+                                        combinaremos con los datos personales que ya sabemos de ti.</li>
                                 </ul>
                             </div>
                         </div>
@@ -132,8 +132,9 @@
                         <div class="card">
                             <div class="card-body">
 
-                                <div class="d-lg-none">
-                                    <p>Llena por favor el siguiente formulario para darte recomendaciones.</p>
+                                <div class="d-lg-none" style="margin-bottom: 0.5rem;">
+                                    <p>Llena por favor el siguiente formulario para darte recomendaciones, lo
+                                        combinaremos con los datos personales que ya sabemos de ti.</p>
                                 </div>
 
                                 <!-- Stepper 1 -->
@@ -196,44 +197,90 @@
                                 <!-- END Stepper 1 -->
 
                                 <!-- Stepper 2 -->
-                                <ul class="stepper" data-mdb-stepper="stepper" data-mdb-stepper-type="vertical">
-                                    <li class="stepper-step stepper-active">
-                                        <div class="stepper-head">
-                                            <span class="stepper-head-icon"> 1 </span>
-                                            <span class="stepper-head-text"> Paso 1: Datos generales </span>
-                                        </div>
-                                        <div class="stepper-content py-3">
-                                            <span>Lorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a
-                                                pellentesque
-                                                dui, non felis. Maecenas malesuada elit lectus felis, malesuada
-                                                ultricies.</span>
-                                        </div>
-                                    </li>
-                                    <li class="stepper-step">
-                                        <div class="stepper-head">
-                                            <span class="stepper-head-icon"> 2 </span>
-                                            <span class="stepper-head-text"> Paso 2: Ingresos </span>
-                                        </div>
-                                        <div class="stepper-content py-3">
-                                            <span>Lorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a
-                                                pellentesque
-                                                dui, non felis. Maecenas malesuada elit lectus felis, malesuada
-                                                ultricies.</span>
-                                        </div>
-                                    </li>
-                                    <li class="stepper-step">
-                                        <div class="stepper-head">
-                                            <span class="stepper-head-icon"> 3 </span>
-                                            <span class="stepper-head-text"> Paso 2: Gastos </span>
-                                        </div>
-                                        <div class="stepper-content py-3">
-                                            <span>Lorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a
-                                                pellentesque
-                                                dui, non felis. Maecenas malesuada elit lectus felis, malesuada
-                                                ultricies.</span>
-                                        </div>
-                                    </li>
-                                </ul>
+                                <form>
+                                    <ul class="stepper" data-mdb-stepper="stepper" data-mdb-stepper-type="vertical">
+                                        <li class="stepper-step stepper-active">
+                                            <div class="stepper-head">
+                                                <span class="stepper-head-icon"> 1 </span>
+                                                <span class="stepper-head-text"> Paso 1: Datos generales </span>
+                                            </div>
+                                            <div class="stepper-content py-1">
+                                                <p class="mb-1">¿Cuál es el objetivo de tus invertir?</p>
+                                                <select class="select">
+                                                    <option value="1">Tener un fondo de emergencias</option>
+                                                    <option value="2">Two</option>
+                                                    <option value="3">Three</option>
+                                                    <option value="4">Four</option>
+                                                    <option value="5">Five</option>
+                                                </select>
+                                                <hr class="mb-1">
+
+                                                <p class="mb-1">¿Cuál es el objetivo de tus invertir?</p>
+                                                <select class="select">
+                                                    <option value="1">Tener un fondo de emergencias</option>
+                                                    <option value="2">Two</option>
+                                                    <option value="3">Three</option>
+                                                    <option value="4">Four</option>
+                                                    <option value="5">Five</option>
+                                                </select>
+                                                <hr class="mb-1">
+                                            </div>
+                                        </li>
+                                        <li class="stepper-step">
+                                            <div class="stepper-head">
+                                                <span class="stepper-head-icon"> 2 </span>
+                                                <span class="stepper-head-text"> Paso 2: Ingresos </span>
+                                            </div>
+                                            <div class="stepper-content py-3">
+                                                <span>Lorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a
+                                                    pellentesque
+                                                    dui, non felis. Maecenas malesuada elit lectus felis, malesuada
+                                                    ultricies.</span>
+                                            </div>
+                                        </li>
+                                        <li class="stepper-step">
+                                            <div class="stepper-head">
+                                                <span class="stepper-head-icon"> 3 </span>
+                                                <span class="stepper-head-text"> Paso 3: Gastos </span>
+                                            </div>
+                                            <div class="stepper-content py-3">
+                                                <span>Lorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a
+                                                    pellentesque
+                                                    dui, non felis. Maecenas malesuada elit lectus felis, malesuada
+                                                    ultricies.</span>
+                                            </div>
+                                        </li>
+                                        <li class="stepper-step">
+                                            <div class="stepper-head">
+                                                <span class="stepper-head-icon"> 4 </span>
+                                                <span class="stepper-head-text"> Paso 4: Mejorar</span>
+                                            </div>
+                                            <div class="stepper-content py-3">
+                                                <!-- Checkbox -->
+                                                <img src="https://mdbootstrap.com/img/new/slides/041.jpg" class="img-fluid" alt="..." />
+                                                <div class="form-check d-flex justify-content-center mb-4">
+                                                    <input class="form-check-input me-2" type="checkbox" value=""
+                                                        id="form5Example3" checked />
+                                                    <label class="form-check-label" for="form5Example3">
+                                                        Compartir mis datos de forma anónima con Oracle para una mejor experiencia.
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="stepper-step">
+                                            <div class="stepper-head">
+                                                <span class="stepper-head-icon"> 5 </span>
+                                                <span class="stepper-head-text"> Paso 5: Enviar</span>
+                                            </div>
+                                            <div class="stepper-content py-3">
+                                                <div class="col-12 text-center">
+                                                    <button type="submit" class="btn btn-primary">Enviar
+                                                        respuestas</button>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </form>
                                 <!-- Stepper 2 END -->
 
                             </div>
@@ -273,5 +320,21 @@
 
     .stepper {
         min-height: 65vh;
+    }
+
+    .stepper-vertical .stepper-head {
+        padding: 1.5rem 0.5rem;
+    }
+
+    .stepper-vertical .stepper-step:not(:last-child):after {
+        left: 1.25rem;
+    }
+
+    .stepper-vertical .stepper-content {
+        padding: 0 1.5rem 1.5rem 1.75rem;
+    }
+
+    .select-input.focused~.select-label {
+        color: #ffffff !important;
     }
 </style>

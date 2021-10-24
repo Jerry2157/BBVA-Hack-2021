@@ -1,5 +1,5 @@
 <!--<div class="row">
-  {{#each notes}}
+  {{#each data.notes}}
   <div class="col-md-3">
     <div class="card">
       <div class="card-body">
@@ -65,6 +65,8 @@
     </div>
   </div>
   <!-- Button trigger script -->
+  {{#if data.isShowedOnboarding}}
+  {{else}}
   <script>
     function LoadInLineScripts() {
       const myModalEl = document.getElementById('staticBackdrop')
@@ -72,6 +74,7 @@
       modal.show()
     }
   </script>
+  {{/if}}
   <!-- END Modal -->
 
   <div class="container" id="init_banner">
@@ -316,9 +319,11 @@
                     de
                     manera sencilla.
                   </p>
-                  <button type="button" class="btn btn-outline-info" data-mdb-ripple-color="dark">
+                  <a href="/investments/recommendations">
+<button type="button" class="btn btn-outline-info" data-mdb-ripple-color="dark">
                     Ver lista de recomendaciones
                   </button>
+</a>
                 </div>
               </div>
             </div>

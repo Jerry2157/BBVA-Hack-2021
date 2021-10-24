@@ -5,7 +5,7 @@ const router = express.Router();
 const {
     renderNoteForm,
     createNewNote,
-    renderNotes,
+    renderInvestments,
     renderEditForm,
     updateNote,
     deleteNote,
@@ -13,7 +13,14 @@ const {
     Recommendations,
     AllProducts,
     RecommendedProducts,
-    renderWizardInvestments
+    renderWizardInvestments,
+    productOne,
+    contractProductOne,
+    productTwo,
+    contractProductTwo,
+    productThree,
+    contractProductThree,
+    landingNewInvestment
 } = require("../controllers/investments.controller");
 
 // Helpers
@@ -34,7 +41,7 @@ router.get("/investments/add", isAuthenticated, renderNoteForm);
 router.post("/investments/new-investment", isAuthenticated, createNewNote);
 
 // Get All Investements
-router.get("/investments", isAuthenticated, renderNotes);
+router.get("/investments", isAuthenticated, renderInvestments);
 
 // Get All Products Investements
 router.get("/investments/allproducts", isAuthenticated, AllProducts);
@@ -49,5 +56,19 @@ router.put("/investments/edit-note/:id", isAuthenticated, updateNote);
 
 // Delete Investment
 router.delete("/investments/delete/:id", isAuthenticated, deleteNote);
+
+
+router.get("/investments/landing-new-investment", isAuthenticated, landingNewInvestment);
+
+// Contract Investment
+router.get("/investments/productinfo/product_one", isAuthenticated, productOne);
+router.post("/investments/productinfo/product_one", isAuthenticated, contractProductOne);
+
+router.get("/investments/productinfo/product_two", isAuthenticated, productTwo);
+router.post("/investments/productinfo/product_two", isAuthenticated, contractProductTwo);
+
+router.get("/investments/productinfo/product_three", isAuthenticated, productThree);
+router.post("/investments/productinfo/product_three", isAuthenticated, contractProductThree);
+
 
 module.exports = router;
