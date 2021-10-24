@@ -64,6 +64,7 @@ app.use(require("./routes/transactions.routes"));
 app.use(require("./routes/investments.routes"));
 app.use(require("./routes/goals.routes"));
 app.use(require("./routes/notifications.routes"));
+app.use(require("./routes/admin.routes"));
 
 // static files
 app.use(express.static(path.join(__dirname, "public")));

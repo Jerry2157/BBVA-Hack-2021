@@ -1,5 +1,5 @@
 <!--<div class="row">
-  {{#each notes}}
+  {{#each data.notes}}
   <div class="col-md-3">
     <div class="card">
       <div class="card-body">
@@ -33,7 +33,6 @@
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb">Estás en->
         <li class="breadcrumb-item"><a href="/investments">Inversiones</a></li>
-        <li class="breadcrumb-item active" aria-current="page"><a href="#">Notificaciones</a></li>
       </ol>
     </nav>
   </div>
@@ -66,6 +65,8 @@
     </div>
   </div>
   <!-- Button trigger script -->
+  {{#if data.isShowedOnboarding}}
+  {{else}}
   <script>
     function LoadInLineScripts() {
       const myModalEl = document.getElementById('staticBackdrop')
@@ -73,6 +74,7 @@
       //modal.show()
     }
   </script>
+  {{/if}}
   <!-- END Modal -->
 
   <div class="container" id="init_banner">
@@ -93,95 +95,15 @@
     <!-- Section: User data -->
     <section class="text-center">
       <div class="row d-flex justify-content-center">
-        <h2 style="margin-bottom: 0rem;"><strong>Notificaciones</strong></h2>
-        <p style="margin-bottom: 0.5rem;">Gerardo</p>
+        <h2 style="margin-bottom: 0rem;"><strong>Inversiones</strong></h2>
+        <p style="margin-bottom: 0.5rem;">Fernanda</p>
         <div class="col-lg-6">
         </div>
       </div>
     </section>
     <!-- Section: User data -->
 
-    <!-- Section: Buttons -->
-    <section class="d-flex text-center justify-content-between align-items-center py-1 border-bottom border-top"
-      data-mdb-step data-mdb-index="1"
-      data-mdb-onboarding-content="Estas son las secciones de tu plataforma de Inversiones">
-      <!-- Left -->
-      <div>
-        <a href="/investments" class="text-white">
-          <button type="button" class="btn btn-link text-reset px-2" data-mdb-ripple-color="dark">
-            Inversiones
-          </button>
-        </a>
-        <a href="/investments/notifications" class="text-white">
-          <button type="button" class="btn btn-outline-light text-reset px-2" data-mdb-ripple-color="dark" data-mdb-step
-            data-mdb-index="2"
-            data-mdb-onboarding-content="Aquí podrás ver los mensajes sobre el desempeño de tus fondos, ejecución de órdenes, etc.">
-            Notificaciones<span class="badge bg-danger ms-1">0</span>
-          </button>
-        </a>
-        <a href="/investments/goals" class="text-white">
-          <button type="button" class="btn btn-link text-reset px-2" data-mdb-ripple-color="dark" data-mdb-step
-            data-mdb-index="3"
-            data-mdb-onboarding-content="Aquí podrás ver como vas hacia el cumplimiento de tus metas y también puedes editar tus objetivos. ">
-            Metas
-          </button>
-        </a>
-        <a href="/investments/recommendations" class="text-white">
-          <button type="button" class="btn btn-link text-reset px-2" data-mdb-ripple-color="dark">
-            Recomendaciones
-          </button>
-        </a>
-        <div class="dropdown d-inline-block">
-          <button class="btn btn-link text-reset dropdown-toggle px-2" data-mdb-ripple-color="dark" type="button"
-            id="dropdownMenuButton" data-mdb-toggle="dropdown" aria-expanded="false">
-            Más
-          </button>
-          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <li><a class="dropdown-item" href="#">Crear nueva inversión</a></li>
-            <li><a class="dropdown-item" href="#">Recomendaciones</a></li>
-            <li><a class="dropdown-item" href="/investments/goals">Metas</a></li>
-            <li><a class="dropdown-item" href="/investments/insights">Balance general</a></li>
-            <li><a class="dropdown-item" href="#">Contacto</a></li>
-          </ul>
-        </div>
-      </div>
-      <!-- Left -->
 
-      <!-- Right -->
-      <div class="d-none d-lg-block">
-        <button type="button" class="btn btn-light bg-light px-3 me-2" data-mdb-ripple-color="dark">
-          <i class="fas fa-edit me-2"></i>Crear nueva inversión
-        </button>
-        <button type="button" class="btn btn-light bg-light px-3 me-2" data-mdb-ripple-color="dark">
-          <i class="fas fa-phone me-2"></i>Contacto
-        </button>
-      </div>
-      <!-- Right -->
-    </section>
-    <!-- Section: Buttons -->
-
-    <!-- Section: User data -->
-    <section class="text-center ">
-      <div class="row d-flex justify-content-center">
-        <div class="col-lg-6">
-          <p class="text-muted" style="margin-bottom: 0.5rem;">
-            Este mes has generado: <strong class="text-success"><i class="fas fa-arrow-up"></i>
-              100.00 MXN</strong>
-          </p>
-          <!--<p class="text-muted" style="margin-bottom: 0.5rem;">
-            Ganancias mes pasado: <strong class="text-info">100.00 MXN</strong>
-          </p>-->
-          <div class="">
-            <a href="/investments/insights">
-            <button type="button" class="btn btn-light bg-light px-3 mb-2 border-bottom" data-mdb-ripple-color="dark">
-              <i class="fas fa-chart-line me-2"></i>Ver más detalles
-            </button>
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- Section: User data -->
 
   </div>
 
@@ -196,11 +118,21 @@
           <section class="mb-1">
             <div class="card">
               <div class="card-body">
-                <h5 class="card-title mt-1"><strong>Instrucciones de prueba</strong></h5>
+                <h5 class="card-title mt-1"><strong>Instrucciones</strong></h5>
 
                 <ul class="list-unstyled text-muted" style="margin-bottom: 0.5rem;">
-                  <li><i class="fas fa-globe fa-fw me-3 mb-1"></i>Aquí se enlistan las notificaciones del usuario</li>
+                  <li><i class="fas fa-globe fa-fw me-3 mb-1"></i>Para crear una nueva inversion Clickea crear nueva
+                    inversion</li>
+                  <li><i class="fas fa-globe fa-fw me-3 mb-1"></i>Ahora selecciona el tipo de inversión</li>
+                  <li><i class="fas fa-globe fa-fw me-3 mb-1"></i>Clickea el botón de notificaciones para ver el estatus
+                    de tus inversiones</li>
+                  <li><i class="fas fa-globe fa-fw me-3 mb-1"></i>Clickea el botón de notificaciones para ver el estatus
+                    de tus inversiones</li>
                 </ul>
+
+                <button type="button" class="btn btn-light bg-light btn-block mb-1" data-mdb-ripple-color="dark">
+                  Crear nueva inversión
+                </button>
               </div>
             </div>
           </section>
@@ -215,35 +147,89 @@
                 <a href="" class="text-reset d-inline-block" data-mdb-step data-mdb-index="4"
                   data-mdb-onboarding-content="Aquí podrás gestionar tus Inversiones activas">
                   <h5 class="card-title mt-1 mb-1">
-                    <strong id="inv_section">Notificaciones</strong>
+                    <strong id="inv_section">Inversiones</strong>
                   </h5>
                 </a>
-                {{#each notifications}}
-                <div class="list-group">
-                  <a class="list-group-item list-group-item-action" aria-current="true">
-                    <div class="d-flex w-100 justify-content-between">
-                      <h5 class="mb-1">{{title}}</h5>
-                      <small>Hace 3 días</small>
+
+                {{#if investment}}
+                <div class="card shadow-0 border" style="margin-bottom: 2rem;">
+                  <div class="card-body border-bottom">
+                    <div class="row">
+                      <div class="col-md-2 col-2 mb-4">
+                        <img
+                          src="https://www.esan.edu.pe/apuntes-empresariales/2019/07/10/1500x844_riesgos_proyectos_inversion.jpg"
+                          class="img-fluid rounded-5">
+                      </div>
+                      <div class="col-md-10 col-10">
+                        <div class="d-flex justify-content-between pb-1">
+                          <h6>{{investment.title}}</h6>
+                          <h6>Rendimiento: %{{investment.interest}}</h6>
+                        </div>
+                        <p class="text-muted">Balance actual: {{investment.investment_balance}}</p>
+                        <p class="text-muted">Periocidad: {{investment.periodicity}}</p>
+                      </div>
                     </div>
-                    <p class="mb-1">
-                      {{description}}
-                    </p>
-                    <small>Borrar notificación.</small>
-                  </a>
+                    <div class="d-md-flex justify-content-between align-items-center mb-n1">
+                      <form action="/pay-investment/{{investment.user}}/{{investment._id}}" method="POST">
+                        <p class="mb-1">Cantidad a pagar</p>
+                        <div class="form-outline">
+                          <input name="monto" type="number" id="typeNumber" class="form-control" />
+                          <label class="form-label" for="typeNumber">Escribir con decimales</label>
+                        </div>
+                        <!-- Submit button -->
+                        <button type="submit" class="btn btn-primary btn-block mb-4">Pagar</button>
+                      </form>
+                    </div>
+                  </div>
                 </div>
                 {{else}}
                 <div class="card text-center" style="width: 100%">
                   <div class="card-body" style="border-radius: 5px; border-style: dashed;">
-                    <h5 class="">Sin notificaciones</h5>
+                    <h5 class="">Usuario no válido</h5>
                     <i class="far fa-plus-square text-light pe-1"></i>
                     <p class="">
-                      ¿Ya probaste creando una inversión?.
+                      Usuario no registrado, error.
                     </p>
-
-                    <a href="/investments" class="btn btn-primary">Crear nueva inversión</a>
                   </div>
                 </div>
-                {{/each}}
+                {{/if}}
+                <!--
+                <div class="card shadow-0 border" style="margin-bottom: 2rem;">
+                  <div class="card-body border-bottom">
+                    <div class="row">
+                      <div class="col-md-2 col-2 mb-4">
+                        <img src="https://www.esan.edu.pe/apuntes-empresariales/2019/07/10/1500x844_riesgos_proyectos_inversion.jpg"
+                          class="img-fluid rounded-5">
+                      </div>
+                      <div class="col-md-10 col-10">
+                        <div class="d-flex justify-content-between pb-1">
+                          <h6>Fondo BBVA DdLP</h6>
+                          <h6>+6.0</h6>
+                        </div>
+                        <p class="text-muted">Fondo de inversión a largo plazo.</p>
+                      </div>
+                    </div>
+                    <div class="d-md-flex justify-content-between align-items-center mb-n1">
+                      <p class="mb-2 mb-md-0">
+                        <i class="fas fa-check-circle text-danger pe-1"></i>
+                        <span class="text-muted">Suspendida</span>
+                      </p>
+                      <div>
+                        <a href="#!">Ver</a>
+                        <span class="px-3" style="color: #aaa;">|</span>
+                        <a href="#!">Reactivar</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                -->
+                <div class="d-lg-flex text-center justify-content-center mt-4">
+                  <a href="/listusers">
+                    <button type="button" class="btn btn-primary w-md-100 ">
+                      Regresar
+                    </button>
+                  </a>
+                </div>
               </div>
           </section>
           <!-- Section: Inversiones -->
@@ -256,17 +242,15 @@
             data-mdb-onboarding-content="Aquí podrás ver la oferta que BBVA seleccionó con base en tu perfil y metas. ">
             <div class="row g-0">
               <div class="col-md-4">
-                <img src="https://mdbootstrap.com/img/new/slides/041.jpg" alt="..." class="img-fluid"
-                  style="object-fit: cover;" />
+                <img
+                  src="https://media.istockphoto.com/photos/close-up-on-man-hand-using-tab-pad-on-laptop-to-working-about-of-picture-id1169192820?k=20&m=1169192820&s=612x612&w=0&h=ca2vnXidL-3B3581s0_ETK3J4I9BnWdyiUhe5SMT9K8="
+                  alt="..." class="img-fluid" style="object-fit: cover;" />
               </div>
               <div class="col-md-8">
                 <div class="card-body">
                   <h5 class="card-title">Lista de recomendaciones</h5>
                   <p class="card-text">
-                    Ve la lista de recomendaciones que BBVA seleccionó para que puedas aumentar y mejorar tus
-                    inversiones
-                    de
-                    manera sencilla.
+                    Aquí podrás ver la oferta que BBVA seleccionó con base en tu perfil y metas.
                   </p>
                   <a href="/investments/recommendations">
                     <button type="button" class="btn btn-outline-info" data-mdb-ripple-color="dark">

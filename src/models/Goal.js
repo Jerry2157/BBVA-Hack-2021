@@ -7,7 +7,8 @@ const GoalSchema = new Schema({
     },
     description: {
         type: String,
-        required: false
+        required: false,
+        default: ""
     },
     price: {
         type: Number,
@@ -28,6 +29,7 @@ const GoalSchema = new Schema({
     },
     accomplished: {
         type: Boolean,
+        required: true,
         default: false
     },
     user: {

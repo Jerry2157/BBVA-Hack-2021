@@ -137,8 +137,8 @@
           <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
             <li><a class="dropdown-item" href="#">Crear nueva inversión</a></li>
             <li><a class="dropdown-item" href="#">Recomendaciones</a></li>
-            <li><a class="dropdown-item" href="#">Metas</a></li>
-            <li><a class="dropdown-item" href="#">Balanca general</a></li>
+            <li><a class="dropdown-item" href="/investments/goals">Metas</a></li>
+            <li><a class="dropdown-item" href="/investments/insights">Balance general</a></li>
             <li><a class="dropdown-item" href="#">Contacto</a></li>
           </ul>
         </div>
@@ -170,9 +170,11 @@
             Ganancias mes pasado: <strong class="text-info">100.00 MXN</strong>
           </p>-->
           <div class="">
+            <a href="/investments/insights">
             <button type="button" class="btn btn-light bg-light px-3 mb-2 border-bottom" data-mdb-ripple-color="dark">
               <i class="fas fa-chart-line me-2"></i>Ver más detalles
             </button>
+            </a>
           </div>
         </div>
       </div>
@@ -222,6 +224,44 @@
                   </h5>
                 </a>
 
+                {{#each data.investments}}
+                <div class="card shadow-0 border" style="margin-bottom: 2rem;">
+                  <div class="card-body border-bottom">
+                    <div class="row">
+                      <div class="col-md-2 col-2 mb-4">
+                        <img src="https://www.esan.edu.pe/apuntes-empresariales/2019/07/10/1500x844_riesgos_proyectos_inversion.jpg"
+                          class="img-fluid rounded-5">
+                      </div>
+                      <div class="col-md-10 col-10">
+                        <div class="d-flex justify-content-between pb-1">
+                          <h6>{{title}}</h6>
+                          <h6>+{{interest}}</h6>
+                        </div>
+                        <p class="text-muted">{{description}}</p>
+                      </div>
+                    </div>
+                    <div class="d-md-flex justify-content-between align-items-center mb-n1">
+                      <p class="mb-2 mb-md-0">
+                        {{#if active}}
+                        <i class="fas fa-check-circle text-success pe-1"></i>
+                        <span class="text-muted">Activo</span>
+                        {{else}}
+                        <i class="fas fa-check-circle text-danger pe-1"></i>
+                        <span class="text-muted">Suspendido</span>
+                        {{/if}}
+                      </p>
+                      {{#if active}}
+                      <div>
+                        <a href="#!">Ver</a>
+                        <span class="px-3" style="color: #aaa;">|</span>
+                        <a href="/investments/delete/{{_id}}">Suspender</a>
+                      </div>
+                      {{else}}
+                      {{/if}}
+                    </div>
+                  </div>
+                </div>
+                {{else}}
                 <div class="card text-center" style="width: 100%">
                   <div class="card-body" style="border-radius: 5px; border-style: dashed;">
                     <h5 class="">Sin inversiones</h5>
@@ -233,34 +273,9 @@
                     <a href="#" class="btn btn-primary">Crear nueva inversión</a>
                   </div>
                 </div>
-
+                {{/each}}
+                <!--
                 <div class="card shadow-0 border" style="margin-bottom: 2rem;">
-                  <div class="card-body border-bottom">
-                    <div class="row">
-                      <div class="col-md-2 col-2 mb-4">
-                        <img src="https://www.esan.edu.pe/apuntes-empresariales/2019/07/10/1500x844_riesgos_proyectos_inversion.jpg"
-                          class="img-fluid rounded-5">
-                      </div>
-                      <div class="col-md-10 col-10">
-                        <div class="d-flex justify-content-between pb-1">
-                          <h6>Inversión sencilla</h6>
-                          <h6>+2.0</h6>
-                        </div>
-                        <p class="text-muted">Inversión por tener dinero en cuenta.</p>
-                      </div>
-                    </div>
-                    <div class="d-md-flex justify-content-between align-items-center mb-n1">
-                      <p class="mb-2 mb-md-0">
-                        <i class="fas fa-check-circle text-success pe-1"></i>
-                        <span class="text-muted">Activa</span>
-                      </p>
-                      <div>
-                        <a href="#!">Ver</a>
-                        <span class="px-3" style="color: #aaa;">|</span>
-                        <a href="#!">Suspender</a>
-                      </div>
-                    </div>
-                  </div>
                   <div class="card-body border-bottom">
                     <div class="row">
                       <div class="col-md-2 col-2 mb-4">
@@ -288,6 +303,7 @@
                     </div>
                   </div>
                 </div>
+                -->
                 <div class="d-lg-flex text-center justify-content-center">
                   <button type="button" class="btn btn-info w-md-100 me-lg-3 mb-lg-0">
                     Mes siguiente

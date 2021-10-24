@@ -1,0 +1,323 @@
+<!--<div class="row">
+  {{#each data.notes}}
+  <div class="col-md-3">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title d-flex justify-content-between align-items-center">
+          {{ title }} <a href="/notes/edit/{{_id}}"><i class="fas fa-edit"></i></a>
+        </h4>
+        <p>{{ description }} </p>
+
+        <form action="/notes/delete/{{_id}}?_method=DELETE" method="POST">
+          <input type="hidden" name="_method" value="DELETE">
+          <button type="submit" class="btn btn-danger btn-block btn-sm">Delete</button>
+        </form>
+
+      </div>
+    </div>
+  </div>
+  {{else}}
+  <div class="card mx-auto">
+    <div class="card-body">
+      <h1>Hello {{user.name}}</h1>
+      <p clsss="lead">There are not Notes yet.</p>
+      <a href="/notes/add" class="btn btn-success btn-block">Create One!</a>
+    </div>
+  </div>
+  {{/each}}
+</div>
+-->
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" style="top: 58px;">
+    <div class="container-fluid">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">Estás en->
+                <li class="breadcrumb-item"><a href="/investments">Inversiones</a></li>
+            </ol>
+        </nav>
+    </div>
+</nav>
+<div style="min-height: 30px;"></div>
+
+<section class=" onboarding" data-mdb-start-trigger="#global-backdrop-trigger" data-mdb-start-event="click"
+    data-mdb-backdrop="true" data-mdb-backdrop-opacity="0.5">
+
+    <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop" data-mdb-backdrop="static" data-mdb-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Bienvenido</h5>
+                    <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    ¡Muchas felicidades! Ya estás más cerca de aprovechar tu dinero al máximo, déjanos presentarte la
+                    sección de inversiones.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" data-mdb-dismiss="modal" id="global-backdrop-trigger">
+                        Comenzar tutorial
+                    </button>
+                    <!--<button type="button" class="btn btn-primary">Understood</button>-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Button trigger script -->
+    {{#if data.isShowedOnboarding}}
+    {{else}}
+    <script>
+        function LoadInLineScripts() {
+            const myModalEl = document.getElementById('staticBackdrop')
+            const modal = new mdb.Modal(myModalEl)
+            //modal.show()
+
+            // Data
+            const dataMixedChartExample = {
+                type: 'bar',
+                data: {
+                    labels: ['Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre '],
+                    datasets: [
+                        // First dataset (bar)
+                        {
+                            label: 'Rendimiento',
+                            data: [2112, 2343, 2545, 3423, 2365, 1985, 987],
+                            order: 2,
+                        },
+                        // Second dataset (line)
+                        {
+                            label: 'Crecimiento %',
+                            data: [211, 2543, 2745, 3123, 2765, 1485, 587],
+                            type: 'line',
+                            order: 1,
+                            backgroundColor: 'rgba(66, 133, 244, 0.0)',
+                            borderColor: '#94DFD7',
+                            borderWidth: 2,
+                            pointBorderColor: '#94DFD7',
+                            pointBackgroundColor: '#94DFD7',
+                            lineTension: 0.0,
+                        },
+                    ],
+                },
+            };
+
+            new mdb.Chart(document.getElementById('chart-mixed-example'), dataMixedChartExample);
+        }
+    </script>
+    {{/if}}
+    <!-- END Modal -->
+
+    <div class="container" id="init_banner">
+        <!-- Section: Banner Image -->
+        <section class="mb-4" style="margin-bottom: 2.0rem!important;">
+            <div class="bg-image rounded-bottom shadow-1-strong" style="
+              background-image: url('https://mdbootstrap.com/img/new/slides/297.jpg');
+              height: 60px;
+            "></div>
+
+            <div class="d-flex justify-content-center">
+                <img src="https://mdbootstrap.com/img/new/avatars/18.jpg"
+                    class="rounded-circle shadow-3-strong position-absolute" alt=""
+                    style="width: 70px; margin-top: -42px" />
+            </div>
+        </section>
+        <!-- Section: End Banner Image-->
+
+        <!-- Section: User data -->
+        <section class="text-center">
+            <div class="row d-flex justify-content-center">
+                <h2 style="margin-bottom: 0rem;"><strong>Inversiones</strong></h2>
+                <p style="margin-bottom: 0.5rem;">Fernanda</p>
+                <div class="col-lg-6">
+                </div>
+            </div>
+        </section>
+        <!-- Section: User data -->
+
+        <!-- Section: Buttons -->
+        <section class="d-flex text-center justify-content-between align-items-center py-1 border-bottom border-top"
+            data-mdb-step data-mdb-index="1"
+            data-mdb-onboarding-content="Estas son las secciones de tu plataforma de Inversiones">
+            <!-- Left -->
+            <div>
+                <a href="/investments" class="text-white">
+                    <button type="button" class="btn btn-outline-light text-reset px-2" data-mdb-ripple-color="dark">
+                        Mis Inversiones
+                    </button>
+                </a>
+                <a href="/investments/notifications" class="text-white">
+                    <button type="button" class="btn btn-link text-reset px-2" data-mdb-ripple-color="dark"
+                        data-mdb-step data-mdb-index="2"
+                        data-mdb-onboarding-content="Aquí podrás ver los mensajes sobre el desempeño de tus fondos, ejecución de órdenes, etc. ">
+                        Notificaciones<span class="badge bg-danger ms-1">0</span>
+                    </button>
+                </a>
+                <a href="/investments/goals" class="text-white">
+                    <button type="button" class="btn btn-link text-reset px-2" data-mdb-ripple-color="dark"
+                        data-mdb-step data-mdb-index="3"
+                        data-mdb-onboarding-content="Aquí podrás ver como vas hacia el cumplimiento de tus metas y también puedes editar tus objetivos. ">
+                        Metas
+                    </button>
+                </a>
+                <a href="/investments/recommendations" class="text-white">
+                    <button type="button" class="btn btn-link text-reset px-2" data-mdb-ripple-color="dark">
+                        Recomendaciones
+                    </button>
+                </a>
+                <div class="dropdown d-inline-block">
+                    <button class="btn btn-link text-reset dropdown-toggle px-2" data-mdb-ripple-color="dark"
+                        type="button" id="dropdownMenuButton" data-mdb-toggle="dropdown" aria-expanded="false">
+                        Más
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <li><a class="dropdown-item" href="#">Crear nueva inversión</a></li>
+                        <li><a class="dropdown-item" href="#">Recomendaciones</a></li>
+                        <li><a class="dropdown-item" href="/investments/goals">Metas</a></li>
+                        <li><a class="dropdown-item" href="/investments/insights">Balance general</a></li>
+                        <li><a class="dropdown-item" href="#">Contacto</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Left -->
+
+            <!-- Right -->
+            <div class="d-none d-lg-block">
+                <button type="button" class="btn btn-light bg-light px-3 me-2" data-mdb-ripple-color="dark">
+                    <i class="fas fa-edit me-2"></i>Crear nueva inversión
+                </button>
+                <button type="button" class="btn btn-light bg-light px-3 me-2" data-mdb-ripple-color="dark">
+                    <i class="fas fa-phone me-2"></i>Contacto
+                </button>
+            </div>
+            <!-- Right -->
+        </section>
+        <!-- Section: Buttons -->
+
+        <!-- Section: User data -->
+        <section class="text-center ">
+            <div class="row d-flex justify-content-center">
+                <div class="col-lg-6">
+                    <p class="text-muted" style="margin-bottom: 0.5rem;">
+                        Este mes has generado: <strong class="text-success"><i class="fas fa-arrow-up"></i>
+                            100.00 MXN</strong>
+                    </p>
+                    <!--<p class="text-muted" style="margin-bottom: 0.5rem;">
+            Ganancias mes pasado: <strong class="text-info">100.00 MXN</strong>
+          </p>-->
+                    <div class="">
+                        <a href="/investments/insights">
+                        <button type="button" class="btn btn-light bg-light px-3 mb-2 border-bottom"
+                            data-mdb-ripple-color="dark">
+                            <i class="fas fa-chart-line me-2"></i>Ver más detalles
+                        </button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Section: User data -->
+
+    </div>
+
+    <hr style="margin: 0.5rem 0 !important;">
+
+    <!-- Section: Grey background -->
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5 mb-2 mb-md-0">
+                    <!-- Section: Intro -->
+                    <section class="mb-1">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title mt-1"><strong>Instrucciones</strong></h5>
+
+                                <ul class="list-unstyled text-muted" style="margin-bottom: 0.5rem;">
+                                    <li><i class="fas fa-globe fa-fw me-3 mb-1"></i>Visualiza los movimientos de tus transacciones en tiempo real de tus operaciones</li>
+                                </ul>
+
+                                <button type="button" class="btn btn-light bg-light btn-block mb-1"
+                                    data-mdb-ripple-color="dark">
+                                    Crear nueva inversión
+                                </button>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- Section: Intro -->
+                </div>
+
+                <div class="col-md-7 mb-2 mb-md-0">
+                    <!-- Section: Inversiones -->
+                    <section class="mb-1">
+                        <div class="card">
+                            <div class="card-body">
+                                <a href="" class="text-reset d-inline-block" data-mdb-step data-mdb-index="4"
+                                    data-mdb-onboarding-content="Aquí podrás gestionar tus Inversiones activas">
+                                    <h5 class="card-title mt-1 mb-1">
+                                        <strong id="inv_section">Inversiones</strong>
+                                    </h5>
+                                </a>
+
+                                <canvas id="chart-mixed-example"></canvas>
+
+                                <div class="d-lg-flex text-center justify-content-center">
+                                    <button type="button" class="btn btn-info w-md-100 me-lg-3 mb-lg-0">
+                                        Mes siguiente
+                                    </button>
+                                    <button type="button" class="btn btn-primary w-md-100 ">
+                                        Mes anterior
+                                    </button>
+                                </div>
+                            </div>
+                    </section>
+                    <!-- Section: Inversiones -->
+
+
+                </div>
+                <!-- Section: Intro -->
+                <section class="mb-4">
+                    <div class="card" data-mdb-step data-mdb-index="5"
+                        data-mdb-onboarding-content="Aquí podrás ver la oferta que BBVA seleccionó con base en tu perfil y metas. ">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <img src="https://media.istockphoto.com/photos/close-up-on-man-hand-using-tab-pad-on-laptop-to-working-about-of-picture-id1169192820?k=20&m=1169192820&s=612x612&w=0&h=ca2vnXidL-3B3581s0_ETK3J4I9BnWdyiUhe5SMT9K8="
+                                    alt="..." class="img-fluid" style="object-fit: cover;" />
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">Lista de recomendaciones</h5>
+                                    <p class="card-text">
+                                        Aquí podrás ver la oferta que BBVA seleccionó con base en tu perfil y metas.
+                                    </p>
+                                    <a href="/investments/recommendations">
+                                        <button type="button" class="btn btn-outline-info" data-mdb-ripple-color="dark">
+                                            Ver lista de recomendaciones
+                                        </button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- Section: Intro -->
+            </div>
+        </div>
+    </section>
+    <section class="text-center border-bottom">
+        <div class="row d-flex justify-content-center">
+            <div class="col-lg-6">
+                <a href="#init_banner" data-mdb-smooth-scroll="smooth-scroll">
+                    <i class="fas fa-chevron-up me-2"></i>
+                    <h3><strong>Subir</strong></h3>
+                </a>
+                <div>
+                </div>
+                <br>
+            </div>
+        </div>
+    </section>
+    <div class="container" style="min-height: 250px;"></div>
+    <br>
+    <br>
+</section>

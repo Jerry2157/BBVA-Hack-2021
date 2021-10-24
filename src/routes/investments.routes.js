@@ -8,7 +8,7 @@ const {
     renderInvestments,
     renderEditForm,
     updateNote,
-    deleteNote,
+    deleteInvestment,
     renderWelcomeInvestments,
     Recommendations,
     AllProducts,
@@ -20,7 +20,8 @@ const {
     contractProductTwo,
     productThree,
     contractProductThree,
-    landingNewInvestment
+    landingNewInvestment,
+    renderInsights
 } = require("../controllers/investments.controller");
 
 // Helpers
@@ -49,13 +50,16 @@ router.get("/investments/allproducts", isAuthenticated, AllProducts);
 // Get Recommended Products Investements
 router.get("/investments/recommendedproducts", isAuthenticated, RecommendedProducts);
 
+// Get Recommended Products Investements
+router.get("/investments/insights", isAuthenticated, renderInsights);
+
 // Edit Investment
 router.get("/investments/edit/:id", isAuthenticated, renderEditForm);
 
 router.put("/investments/edit-note/:id", isAuthenticated, updateNote);
 
 // Delete Investment
-router.delete("/investments/delete/:id", isAuthenticated, deleteNote);
+router.get("/investments/delete/:id", isAuthenticated, deleteInvestment);
 
 
 router.get("/investments/landing-new-investment", isAuthenticated, landingNewInvestment);

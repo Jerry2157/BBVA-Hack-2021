@@ -29,14 +29,14 @@
 -->
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" style="top: 58px;">
-    <div class="container-fluid">
-        <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">Estás en->
-                <li class="breadcrumb-item"><a href="/investments">Inversiones</a></li>
-                <li class="breadcrumb-item active" aria-current="page"><a href="#">Metas</a></li>
-            </ol>
-        </nav>
-    </div>
+  <div class="container-fluid">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">Estás en->
+        <li class="breadcrumb-item"><a href="/investments">Inversiones</a></li>
+        <li class="breadcrumb-item active" aria-current="page"><a href="/investments/goals">Metas</a></li>
+      </ol>
+    </nav>
+  </div>
 </nav>
 <div style="min-height: 30px;"></div>
 
@@ -53,7 +53,8 @@
           <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          ¡Muchas felicidades! Ya estás más cerca de aprovechar tu dinero al máximo, déjanos presentarte la sección de inversiones.
+          ¡Muchas felicidades! Ya estás más cerca de aprovechar tu dinero al máximo, déjanos presentarte la sección de
+          inversiones.
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-success" data-mdb-dismiss="modal" id="global-backdrop-trigger">
@@ -101,31 +102,34 @@
     <!-- Section: User data -->
 
     <!-- Section: Buttons -->
-    <section class="d-flex text-center justify-content-between align-items-center py-1 border-bottom border-top" data-mdb-step data-mdb-index="1"
-          data-mdb-onboarding-content="Estas son las secciones de tu plataforma de Inversiones">
+    <section class="d-flex text-center justify-content-between align-items-center py-1 border-bottom border-top"
+      data-mdb-step data-mdb-index="1"
+      data-mdb-onboarding-content="Estas son las secciones de tu plataforma de Inversiones">
       <!-- Left -->
       <div>
         <a href="/investments" class="text-white">
-        <button type="button" class="btn btn-link text-reset px-2" data-mdb-ripple-color="dark">
-          Inversiones
-        </button>
+          <button type="button" class="btn btn-link text-reset px-2" data-mdb-ripple-color="dark">
+            Inversiones
+          </button>
         </a>
         <a href="/investments/notifications" class="text-white">
-        <button type="button" class="btn btn-link text-reset px-2" data-mdb-ripple-color="dark" data-mdb-step
-          data-mdb-index="2" data-mdb-onboarding-content="Aquí podrás ver los mensajes sobre el desempeño de tus fondos, ejecución de órdenes, etc.">
-          Notificaciones<span class="badge bg-danger ms-1">0</span>
-        </button>
+          <button type="button" class="btn btn-link text-reset px-2" data-mdb-ripple-color="dark" data-mdb-step
+            data-mdb-index="2"
+            data-mdb-onboarding-content="Aquí podrás ver los mensajes sobre el desempeño de tus fondos, ejecución de órdenes, etc.">
+            Notificaciones<span class="badge bg-danger ms-1">0</span>
+          </button>
         </a>
         <a href="/investments/goals" class="text-white">
-        <button type="button" class="btn btn-outline-light text-reset px-2" data-mdb-ripple-color="dark" data-mdb-step
-          data-mdb-index="3" data-mdb-onboarding-content="Aquí podrás ver como vas hacia el cumplimiento de tus metas y también puedes editar tus objetivos. ">
-          Metas
-        </button>
+          <button type="button" class="btn btn-outline-light text-reset px-2" data-mdb-ripple-color="dark" data-mdb-step
+            data-mdb-index="3"
+            data-mdb-onboarding-content="Aquí podrás ver como vas hacia el cumplimiento de tus metas y también puedes editar tus objetivos. ">
+            Metas
+          </button>
         </a>
         <a href="/investments/recommendations" class="text-white">
-        <button type="button" class="btn btn-link text-reset px-2" data-mdb-ripple-color="dark">
-          Recomendaciones
-        </button>
+          <button type="button" class="btn btn-link text-reset px-2" data-mdb-ripple-color="dark">
+            Recomendaciones
+          </button>
         </a>
         <div class="dropdown d-inline-block">
           <button class="btn btn-link text-reset dropdown-toggle px-2" data-mdb-ripple-color="dark" type="button"
@@ -135,8 +139,8 @@
           <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
             <li><a class="dropdown-item" href="#">Crear nueva inversión</a></li>
             <li><a class="dropdown-item" href="#">Recomendaciones</a></li>
-            <li><a class="dropdown-item" href="#">Metas</a></li>
-            <li><a class="dropdown-item" href="#">Balanca general</a></li>
+            <li><a class="dropdown-item" href="/investments/goals">Metas</a></li>
+            <li><a class="dropdown-item" href="/investments/insights">Balance general</a></li>
             <li><a class="dropdown-item" href="#">Contacto</a></li>
           </ul>
         </div>
@@ -168,9 +172,11 @@
             Ganancias mes pasado: <strong class="text-info">100.00 MXN</strong>
           </p>-->
           <div class="">
+            <a href="/investments/insights">
             <button type="button" class="btn btn-light bg-light px-3 mb-2 border-bottom" data-mdb-ripple-color="dark">
               <i class="fas fa-chart-line me-2"></i>Ver más detalles
             </button>
+            </a>
           </div>
         </div>
       </div>
@@ -193,11 +199,59 @@
                 <h5 class="card-title mt-1"><strong>Instrucciones de prueba</strong></h5>
 
                 <ul class="list-unstyled text-muted" style="margin-bottom: 0.5rem;">
-                  <li><i class="fas fa-globe fa-fw me-3 mb-1"></i>Da click en una inversión para editar o eliminar</li>
+                  <li><i class="fas fa-globe fa-fw me-3 mb-1"></i>Da click en una meta</li>
                 </ul>
 
-                <button type="button" class="btn btn-light bg-light btn-block mb-1" data-mdb-ripple-color="dark">
-                  Crear nueva inversión
+                <!-- Modal example - top right -->
+                <form action="/investments/goals/new-goal" method="POST">
+                  <div class="modal fade right" id="exampleSideModal1" tabindex="-1" aria-labelledby="exampleSideModal1"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-side modal-top-right">
+                      <div class="modal-content">
+                        <div class="modal-header bg-info text-white">
+                          <h5 class="modal-title" id="exampleSideModal1">Agregar nueva meta</h5>
+                          <button type="button" class="btn-close btn-close-white" data-mdb-dismiss="modal"
+                            aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                          <div class="row">
+                            <p>Instrucciones: llena los campos para registrar una meta de inversión</p>
+                            <div class="form-outline mb-2">
+                              <input name="title" type="text" id="typeText" class="form-control" />
+                              <label class="form-label" for="typeText">Artículo o actividad</label>
+                            </div>
+                            <div class="form-outline mb-2">
+                              <input name="description" type="text" id="typeText" class="form-control" />
+                              <label class="form-label" for="typeText">Descripción (opcional)</label>
+                            </div>
+                            <div class="form-outline mb-2">
+                              <input name="price" type="number" id="typeNumber" class="form-control" />
+                              <label class="form-label" for="typeNumber">Precio</label>
+                            </div>
+                            <div class="form-outline datepicker mb-5" data-mdb-format="dd, mmm, yyyy">
+                              <input name="finish_date" type="text" class="form-control" id="exampleDatepicker4"
+                                placeholder="dd, mmm, yyyy" />
+                              <label for="exampleDatepicker4" class="form-label">Día objetivo</label>
+                            </div>
+                            <label class="form-label mb-2" for="customFile">Imagen (opcional)</label>
+                            <input type="file" class="form-control" id="customFile" />
+
+                          </div>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="submit" class="btn btn-success">Agregar</button>
+                          <button type="button" class="btn btn-outline-info" data-mdb-dismiss="modal">
+                            Cancelar
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+
+                <button type="button" class="btn btn-light bg-light btn-block mb-1" data-mdb-ripple-color="dark"
+                  data-mdb-toggle="modal" data-mdb-target="#exampleSideModal1">
+                  Crear nueva meta
                 </button>
               </div>
             </div>
@@ -213,23 +267,11 @@
                 <a href="" class="text-reset d-inline-block" data-mdb-step data-mdb-index="4"
                   data-mdb-onboarding-content="Aquí podrás gestionar tus Inversiones activas">
                   <h5 class="card-title mt-1 mb-1">
-                    <strong id="inv_section">Inversiones</strong>
+                    <strong id="inv_section">Metas</strong>
                   </h5>
                 </a>
-
-                <div class="card text-center" style="width: 100%">
-                  <div class="card-body" style="border-radius: 5px; border-style: dashed;">
-                    <h5 class="">Sin inversiones</h5>
-                    <i class="far fa-plus-square text-light pe-1"></i>
-                    <p class="">
-                      Aún no haz creado tu primera inversión. Cuando creas una aquí se enlistará.
-                    </p>
-
-                    <a href="#" class="btn btn-primary">Crear nueva inversión</a>
-                  </div>
-                </div>
-
-                <div class="card shadow-0 border" style="margin-bottom: 2rem;">
+                {{#each goals}}
+                  <div class="card shadow-0 border" style="margin-bottom: 2rem;">
                   <div class="card-body border-bottom">
                     <div class="row">
                       <div class="col-md-2 col-2 mb-4">
@@ -238,59 +280,38 @@
                       </div>
                       <div class="col-md-10 col-10">
                         <div class="d-flex justify-content-between pb-1">
-                          <h6>Inversión sencilla</h6>
-                          <h6>+2.0</h6>
+                          <h6>{{title}}</h6>
+                          <h6>Vence: 24/10/2021</h6>
                         </div>
-                        <p class="text-muted">Inversión por tener dinero en cuenta.</p>
+                        <p class="text-muted">Estás a muy poco de lograrla.</p>
                       </div>
                     </div>
                     <div class="d-md-flex justify-content-between align-items-center mb-n1">
                       <p class="mb-2 mb-md-0">
                         <i class="fas fa-check-circle text-success pe-1"></i>
-                        <span class="text-muted">Activa</span>
+                        <span class="text-muted">${{price}}</span>
                       </p>
                       <div>
-                        <a href="#!">Ver</a>
+                        <a href="">Modificar</a>
                         <span class="px-3" style="color: #aaa;">|</span>
-                        <a href="#!">Suspender</a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="card-body border-bottom">
-                    <div class="row">
-                      <div class="col-md-2 col-2 mb-4">
-                        <img src="https://mdbootstrap.com/img/Photos/new-templates/img100.jpg"
-                          class="img-fluid rounded-5">
-                      </div>
-                      <div class="col-md-10 col-10">
-                        <div class="d-flex justify-content-between pb-1">
-                          <h6>Fondo BBVA DdLP</h6>
-                          <h6>+6.0</h6>
-                        </div>
-                        <p class="text-muted">Fondo de inversión a largo plazo.</p>
-                      </div>
-                    </div>
-                    <div class="d-md-flex justify-content-between align-items-center mb-n1">
-                      <p class="mb-2 mb-md-0">
-                        <i class="fas fa-check-circle text-danger pe-1"></i>
-                        <span class="text-muted">Suspendida</span>
-                      </p>
-                      <div>
-                        <a href="#!">Ver</a>
-                        <span class="px-3" style="color: #aaa;">|</span>
-                        <a href="#!">Reactivar</a>
+                        <a href="">Eliminar</a>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div class="d-lg-flex text-center justify-content-center">
-                  <button type="button" class="btn btn-info w-md-100 me-lg-3 mb-lg-0">
-                    Mes siguiente
-                  </button>
-                  <button type="button" class="btn btn-primary w-md-100 ">
-                    Mes anterior
-                  </button>
+                {{else}}
+                <div class="card text-center" style="width: 100%">
+                  <div class="card-body" style="border-radius: 5px; border-style: dashed;">
+                    <h5 class="">Sin Metas</h5>
+                    <i class="far fa-plus-square text-light pe-1"></i>
+                    <p class="">
+                      Aún no haz creado tu primera meta. Cuando crees una aquí se enlistará.
+                    </p>
+
+                    <a href="#" class="btn btn-primary" data-mdb-toggle="modal" data-mdb-target="#exampleSideModal1">Crear nueva meta</a>
+                  </div>
                 </div>
+                {{/each}}
               </div>
           </section>
           <!-- Section: Inversiones -->
@@ -316,10 +337,10 @@
                     manera sencilla.
                   </p>
                   <a href="/investments/recommendations">
-<button type="button" class="btn btn-outline-info" data-mdb-ripple-color="dark">
-                    Ver lista de recomendaciones
-                  </button>
-</a>
+                    <button type="button" class="btn btn-outline-info" data-mdb-ripple-color="dark">
+                      Ver lista de recomendaciones
+                    </button>
+                  </a>
                 </div>
               </div>
             </div>

@@ -23,7 +23,7 @@ const InvestmentTransactionsSchema = new Schema({
     },
     userwhopayed: {
         type: String,
-        required: true,
+        required: false,
         default: "0"
     }
 }, {

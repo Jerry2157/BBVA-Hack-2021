@@ -7,8 +7,13 @@ const { ShowedOnboarding } = require("../helpers/onboardings");
 const Note = require("../models/Note");
 const Investment = require("../models/Investment");
 
-investmentsCtrl.renderWelcomeInvestments = (req, res) => {
-    res.render("investments/welcome-investments");
+investmentsCtrl.renderWelcomeInvestments = async(req, res) => {
+    var isShowedOnboarding = await ShowedOnboarding(req.user.id, "onboardingwelcomeshowed");
+    if (isShowedOnboarding) {
+        res.redirect("/investments")
+    } else {
+        res.render("investments/welcome-investments");
+    }
 };
 
 investmentsCtrl.renderWizardInvestments = (req, res) => {
@@ -17,6 +22,10 @@ investmentsCtrl.renderWizardInvestments = (req, res) => {
 
 investmentsCtrl.Recommendations = (req, res) => {
     res.render("investments/recommendations");
+};
+
+investmentsCtrl.renderInsights = (req, res) => {
+    res.render("investments/insights");
 };
 
 investmentsCtrl.AllProducts = (req, res) => {
@@ -88,10 +97,10 @@ investmentsCtrl.updateNote = async(req, res) => {
     res.redirect("/notes");
 };
 
-investmentsCtrl.deleteNote = async(req, res) => {
-    await Note.findByIdAndDelete(req.params.id);
-    req.flash("success_msg", "Note Deleted Successfully");
-    res.redirect("/notes");
+investmentsCtrl.deleteInvestment = async(req, res) => {
+    await Investment.findByIdAndUpdate(req.params.id, { active: false });
+    req.flash("success_msg", "Investment Suspended Successfully");
+    res.redirect("/investments");
 };
 
 
@@ -120,7 +129,7 @@ investmentsCtrl.contractProductOne = async(req, res) => {
         });
     } else {
         try {
-            await createContract(0, "Producto de inversión 1", "Descripción de producto de inversión.", "fixed", 2.0, plazo, user_id)
+            await createContract(0, "Producto de inversión 1", "Descripción de producto de inversión.", "fixed", 2.0, monto, plazo, user_id)
             req.flash("success_msg", "Inversión creada correctamente");
             res.redirect("/investments/landing-new-investment");
         } catch (error) {
@@ -145,7 +154,7 @@ investmentsCtrl.contractProductThree = (req, res) => {
     res.render("investments/products/contracts/product_three");
 };
 
-async function createContract(idCatalogInvestment, title, description, type_rent, interest, periodicity, user) {
+async function createContract(idCatalogInvestment, title, description, type_rent, interest, monto, periodicity, user) {
     //todo get actual balance
     var init_balance = 0;
     let now = new Date();
@@ -156,8 +165,8 @@ async function createContract(idCatalogInvestment, title, description, type_rent
             title: title,
             description: description,
             type_rent: type_rent,
-            init_balance: init_balance,
-            investment_balance: 0,
+            init_balance: monto,
+            investment_balance: monto,
             interest: interest,
             periodicity: periodicity,
             init_date: now,
