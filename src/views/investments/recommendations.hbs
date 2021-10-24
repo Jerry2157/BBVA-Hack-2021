@@ -49,12 +49,11 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="staticBackdropLabel">Página inversiones</h5>
+          <h5 class="modal-title" id="staticBackdropLabel">Bienvenido</h5>
           <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          Aquí va un texto de bienvenida a la página de inversiones. recuerda poner texto con base en Behaviour
-          economics.
+          ¡Muchas felicidades! Ya estás más cerca de aprovechar tu dinero al máximo, déjanos presentarte la sección de inversiones. 
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-success" data-mdb-dismiss="modal" id="global-backdrop-trigger">
@@ -70,7 +69,7 @@
     function LoadInLineScripts() {
       const myModalEl = document.getElementById('staticBackdrop')
       const modal = new mdb.Modal(myModalEl)
-      modal.show()
+      //modal.show()
     }
   </script>
   <!-- END Modal -->
@@ -103,7 +102,7 @@
 
     <!-- Section: Buttons -->
     <section class="d-flex text-center justify-content-between align-items-center py-1 border-bottom border-top" data-mdb-step data-mdb-index="1"
-          data-mdb-onboarding-content="Este es el primer paso">
+          data-mdb-onboarding-content="Estas son las secciones de tu plataforma de Inversiones">
       <!-- Left -->
       <div>
         <a href="/investments" class="text-white">
@@ -113,13 +112,13 @@
         </a>
         <a href="/investments/notifications" class="text-white">
         <button type="button" class="btn btn-link text-reset px-2" data-mdb-ripple-color="dark" data-mdb-step
-          data-mdb-index="2" data-mdb-onboarding-content="Backdrop is set to false by default">
+          data-mdb-index="2" data-mdb-onboarding-content="Aquí podrás ver los mensajes sobre el desempeño de tus fondos, ejecución de órdenes, etc.">
           Notificaciones<span class="badge bg-danger ms-1">0</span>
         </button>
         </a>
         <a href="/investments/goals" class="text-white">
         <button type="button" class="btn btn-link text-reset px-2" data-mdb-ripple-color="dark" data-mdb-step
-          data-mdb-index="3" data-mdb-onboarding-content="Backdrop is set to false by default">
+          data-mdb-index="3" data-mdb-onboarding-content="Aquí podrás ver como vas hacia el cumplimiento de tus metas y también puedes editar tus objetivos. ">
           Metas
         </button>
         </a>
@@ -191,15 +190,18 @@
           <section class="mb-1">
             <div class="card">
               <div class="card-body">
-                <h5 class="card-title mt-1"><strong>Instrucciones de prueba</strong></h5>
+                <h5 class="card-title mt-1"><strong>Instrucciones</strong></h5>
 
                 <ul class="list-unstyled text-muted" style="margin-bottom: 0.5rem;">
-                  <li><i class="fas fa-globe fa-fw me-3 mb-1"></i>Da click en una inversión para editar o eliminar</li>
+                  <li><i class="fas fa-globe fa-fw me-3 mb-1"></i>De click en una recomendación para concoer más</li>
+                  <li><i class="fas fa-globe fa-fw me-3 mb-1"></i>Para cerrar una recomendación clicke nuevamente</li>
+                  <li><i class="fas fa-globe fa-fw me-3 mb-1"></i>Las recomendaciones de Entusiasta son para inversionistas principiantes</li>
+                  <li><i class="fas fa-globe fa-fw me-3 mb-1"></i>Las recomendaciones de Profesional son para inversionistas avanzados</li>
                 </ul>
 
-                <button type="button" class="btn btn-light bg-light btn-block mb-1" data-mdb-ripple-color="dark">
+                <!--<button type="button" class="btn btn-light bg-light btn-block mb-1" data-mdb-ripple-color="dark">
                   Crear nueva inversión
-                </button>
+                </button>-->
               </div>
             </div>
           </section>
@@ -222,13 +224,15 @@
                                         <button class="accordion-button collapsed" type="button"
                                             data-mdb-toggle="collapse" data-mdb-target="#accordionOneCollapseOne"
                                             aria-expanded="true" aria-controls="accordionOneCollapseOne">
-                                            Accordion Item #1
+                                            No lo dejes para después
                                         </button>
                                     </h2>
                                     <div id="accordionOneCollapseOne" class="accordion-collapse collapse"
                                         aria-labelledby="headingOne" data-mdb-parent="#accordionOne">
                                         <div class="accordion-body">
-                                            <div class="form-check">
+                                          Así como en el ahorro el tema no es cuánto sino hacerlo, en la inversión 
+                                          estamos en las mismas: no hay que esperar a ganar el premio gordo de la lotería para abrir un fondo de inversión. 
+                                            <!--<div class="form-check">
                                                 <input class="form-check-input" type="checkbox" value=""
                                                     id="flexCheckDefault">
                                                 <label class="form-check-label" for="flexCheckDefault">
@@ -241,7 +245,7 @@
                                                 <label class="form-check-label" for="flexCheckChecked">
                                                     Checked checkbox
                                                 </label>
-                                            </div>
+                                            </div>-->
                                         </div>
                                     </div>
                                 </div>
@@ -250,24 +254,13 @@
                                         <button class="accordion-button collapsed" type="button"
                                             data-mdb-toggle="collapse" data-mdb-target="#accordionOneCollapseTwo"
                                             aria-expanded="false" aria-controls="accordionOneCollapseTwo">
-                                            Accordion Item #2
+                                            Lleva un presupuesto
                                         </button>
                                     </h2>
                                     <div id="accordionOneCollapseTwo" class="accordion-collapse collapse"
-                                        aria-labelledby="headingTwo" data-mdb-parent="#accordionOne">
+                                        aria-labelledby="headingTwo" data-mdb-parent="#accordionTwo">
                                         <div class="accordion-body">
-                                            <strong>This is the second item's accordion body.</strong> It is hidden by
-                                            default, until the collapse plugin adds the appropriate classes that we use
-                                            to
-                                            style each element. These classes control the overall appearance, as well as
-                                            the
-                                            showing and hiding via CSS transitions. You can modify any of this with
-                                            custom CSS
-                                            or overriding our default variables. It's also worth noting that just about
-                                            any
-                                            HTML can go within the <strong>.accordion-body</strong>, though the
-                                            transition
-                                            does limit overflow.
+                                           Usando un presupuesto puedes identificar gastos innecesarios e incrementar tu dinero disponible para invertir.
                                         </div>
                                     </div>
                                 </div>
@@ -276,24 +269,108 @@
                                         <button class="accordion-button collapsed" type="button"
                                             data-mdb-toggle="collapse" data-mdb-target="#accordionOneCollapseThree"
                                             aria-expanded="false" aria-controls="accordionOneCollapseThree">
-                                            Accordion Item #3
+                                            Reduce los gastos hormiga
                                         </button>
                                     </h2>
                                     <div id="accordionOneCollapseThree" class="accordion-collapse collapse"
-                                        aria-labelledby="headingThree" data-mdb-parent="#accordionOne">
+                                        aria-labelledby="headingThree" data-mdb-parent="#accordionThree">
                                         <div class="accordion-body">
-                                            <strong>This is the third item's accordion body.</strong> It is hidden by
-                                            default,
-                                            until the collapse plugin adds the appropriate classes that we use to style
-                                            each
-                                            element. These classes control the overall appearance, as well as the
-                                            showing and
-                                            hiding via CSS transitions. You can modify any of this with custom CSS or
-                                            overriding our default variables. It's also worth noting that just about any
-                                            HTML
-                                            can go within the <strong>.accordion-body</strong>, though the transition
-                                            does
-                                            limit overflow.
+                                            Un consejo para ahorrar más dinero es estar atento a estos gastos menores (gastos hormiga) que, 
+                                            si se reducen, podrán generar una buena economía y permitir que hagas una inversión mayor.
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingFour">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-mdb-toggle="collapse" data-mdb-target="#accordionOneCollapseFour"
+                                            aria-expanded="false" aria-controls="accordionOneCollapseFour">
+                                            Prevee de manera inteligente
+                                        </button>
+                                    </h2>
+                                    <div id="accordionOneCollapseFour" class="accordion-collapse collapse"
+                                        aria-labelledby="headingFour" data-mdb-parent="#accordionFour">
+                                        <div class="accordion-body">
+                                            Cuando tengas acceso a cualquier dinero que no estaba previsto en tus ganancias fijas,
+                                            intenta no entusiasmarte y gastarlo todo, piensa a largo plazo y coloca ese valor en tu inversión para aumentar aún más tus ingresos.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingFive">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-mdb-toggle="collapse" data-mdb-target="#accordionOneCollapseFive"
+                                            aria-expanded="false" aria-controls="accordionOneCollapseFive">
+                                            Contempla invertir
+                                        </button>
+                                    </h2>
+                                    <div id="accordionOneCollapseFive" class="accordion-collapse collapse"
+                                        aria-labelledby="headingFive" data-mdb-parent="#accordionFive">
+                                        <div class="accordion-body">
+                                           Recuerda siempre contemplar primero para tu ahorro e inversión, y ya después puedes gastar el resto de tu ingreso si así lo deseas.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingSix">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-mdb-toggle="collapse" data-mdb-target="#accordionOneCollapseSix"
+                                            aria-expanded="false" aria-controls="accordionOneCollapseSix">
+                                            Lento pero seguro
+                                        </button>
+                                    </h2>
+                                    <div id="accordionOneCollapseSix" class="accordion-collapse collapse"
+                                        aria-labelledby="headingSix" data-mdb-parent="#accordionSix">
+                                        <div class="accordion-body">
+                                          Está bien comenzar con poco, recuerda que Roma no se construyo en un día. 
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingSeven">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-mdb-toggle="collapse" data-mdb-target="#accordionOneCollapseSeven"
+                                            aria-expanded="false" aria-controls="accordionOneCollapseSeven">
+                                            Compara opciones
+                                        </button>
+                                    </h2>
+                                    <div id="accordionOneCollapseSeven" class="accordion-collapse collapse"
+                                        aria-labelledby="headingSeven" data-mdb-parent="#accordionSeven">
+                                        <div class="accordion-body">
+                                          Antes de decidirte, recuerda hacer una búsqueda extensa de las opciones y
+                                           evaluarlas cuidadosamente para elegir las que más se adapten a tu perfil de riesgo y metas. 
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingEight">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-mdb-toggle="collapse" data-mdb-target="#accordionOneCollapseEight"
+                                            aria-expanded="false" aria-controls="accordionOneCollapseEight">
+                                            Crea metas financieras
+                                        </button>
+                                    </h2>
+                                    <div id="accordionOneCollapseEight" class="accordion-collapse collapse"
+                                        aria-labelledby="headingSeven" data-mdb-parent="#accordionEight">
+                                        <div class="accordion-body">
+                                          Llegó el momento de establecer tus metas financieras. Esto también te ayudará a plantear un plazo aproximado para que los puedas alcanzar.
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingNine">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-mdb-toggle="collapse" data-mdb-target="#accordionOneCollapseNine"
+                                            aria-expanded="false" aria-controls="accordionOneCollapseNine">
+                                            Invierte a tu manera
+                                        </button>
+                                    </h2>
+                                    <div id="accordionOneCollapseNine" class="accordion-collapse collapse"
+                                        aria-labelledby="headingSeven" data-mdb-parent="#accordionNine">
+                                        <div class="accordion-body">
+                                          Conócete a ti mismo. No a todos nos gustan las mismas cosas y no todos tenemos los mismos objetivos, también asegúrate de conocer tu nivel de tolerancia frente al riesgo.
                                         </div>
                                     </div>
                                 </div>
@@ -327,24 +404,13 @@
                                         <button class="accordion-button collapsed" type="button"
                                             data-mdb-toggle="collapse" data-mdb-target="#accordionTwoCollapseTwo"
                                             aria-expanded="false" aria-controls="accordionTwoCollapseTwo">
-                                            Accordion Item #2
+                                            Monitorea el mercado
                                         </button>
                                     </h2>
                                     <div id="accordionTwoCollapseTwo" class="accordion-collapse collapse"
                                         aria-labelledby="headingTwo" data-mdb-parent="#accordionTwo">
                                         <div class="accordion-body">
-                                            <strong>This is the second item's accordion body.</strong> It is hidden by
-                                            default, until the collapse plugin adds the appropriate classes that we use
-                                            to
-                                            style each element. These classes control the overall appearance, as well as
-                                            the
-                                            showing and hiding via CSS transitions. You can modify any of this with
-                                            custom CSS
-                                            or overriding our default variables. It's also worth noting that just about
-                                            any
-                                            HTML can go within the <strong>.accordion-body</strong>, though the
-                                            transition
-                                            does limit overflow.
+                                            Estar atento al comportamiento de la economía, así como las tendencias del mercado, te puede ayudar a evitar pasar malos ratos. 
                                         </div>
                                     </div>
                                 </div>
@@ -353,24 +419,59 @@
                                         <button class="accordion-button collapsed" type="button"
                                             data-mdb-toggle="collapse" data-mdb-target="#accordionTwoCollapseThree"
                                             aria-expanded="false" aria-controls="accordionTwoCollapseThree">
-                                            Accordion Item #3
+                                            Inversor precavido vale por 2
                                         </button>
                                     </h2>
                                     <div id="accordionTwoCollapseThree" class="accordion-collapse collapse"
-                                        aria-labelledby="headingThree" data-mdb-parent="#accordionTwo">
+                                        aria-labelledby="headingThree" data-mdb-parent="#accordionThree">
                                         <div class="accordion-body">
-                                            <strong>This is the third item's accordion body.</strong> It is hidden by
-                                            default,
-                                            until the collapse plugin adds the appropriate classes that we use to style
-                                            each
-                                            element. These classes control the overall appearance, as well as the
-                                            showing and
-                                            hiding via CSS transitions. You can modify any of this with custom CSS or
-                                            overriding our default variables. It's also worth noting that just about any
-                                            HTML
-                                            can go within the <strong>.accordion-body</strong>, though the transition
-                                            does
-                                            limit overflow.
+                                            En BBVA puedes contratar fondos de cobertura para reducir el impacto de las fluctuaciones en tu portafolio de inversión. 
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingFour">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-mdb-toggle="collapse" data-mdb-target="#accordionTwoCollapseFour"
+                                            aria-expanded="false" aria-controls="accordionTwoCollapseFour">
+                                            Diversificate
+                                        </button>
+                                    </h2>
+                                    <div id="accordionTwoCollapseFour" class="accordion-collapse collapse"
+                                        aria-labelledby="headingFour" data-mdb-parent="#accordionFour">
+                                        <div class="accordion-body">
+                                            Tu portafolio debe estar bien diversificado para reducir tu exposición a los riesgos del mercado. 
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingFive">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-mdb-toggle="collapse" data-mdb-target="#accordionTwoCollapseFive"
+                                            aria-expanded="false" aria-controls="accordionTwoCollapseFive">
+                                            Organizate y Perservera
+                                        </button>
+                                    </h2>
+                                    <div id="accordionTwoCollapseFive" class="accordion-collapse collapse"
+                                        aria-labelledby="headingFive" data-mdb-parent="#accordionFive">
+                                        <div class="accordion-body">
+                                            Aunque alguna de tus elecciones tenga liquidez diaria y, por lo tanto, te permita hacer un retiro en cualquier momento, organízate para que eso no sea necesario. 
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingFive">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-mdb-toggle="collapse" data-mdb-target="#accordionTwoCollapseFive"
+                                            aria-expanded="false" aria-controls="accordionTwoCollapseFive">
+                                            Explora alternativas
+                                        </button>
+                                    </h2>
+                                    <div id="accordionTwoCollapseFive" class="accordion-collapse collapse"
+                                        aria-labelledby="headingFive" data-mdb-parent="#accordionFive">
+                                        <div class="accordion-body">
+                                            Un portafolio de inversión bien diversificado puede incluir elementos de renta fija, renta variable, 
+                                            deuda nacional y/o internacional, además de certificados de gobierno, entre otros. 
                                         </div>
                                     </div>
                                 </div>
