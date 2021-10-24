@@ -15,12 +15,16 @@ const InvestmentSchema = new Schema({
         required: false,
         default: "sin descripción"
     },
+    type_rent: {
+        type: String,
+        required: true
+    },
     init_balance: {
         type: Number,
         required: true
     },
-    balance: {
-        type: String,
+    investment_balance: {
+        type: Number,
         required: true
     },
     interest: {
@@ -37,9 +41,9 @@ const InvestmentSchema = new Schema({
         type: Date,
         default: Date.now
     },
-    archived: {
+    active: {
         type: Boolean,
-        default: false
+        default: true
     },
     user: {
         type: String,
